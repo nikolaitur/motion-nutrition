@@ -131,7 +131,7 @@ class RechargeExtension extends HTMLElement {
     ).options[0].selected = true;
     document.querySelector(".select__select").options[1].selected = true;
     this.renderPrice(
-      Shopify?.rechargeSubscriptions?.subscriptionPrice,
+      this._containerSelector.dataset.subscriptionPrice,
       this._monthlySubscriptionVariant
     );
   }
@@ -171,7 +171,7 @@ class RechargeExtension extends HTMLElement {
     console.log(this.querySelector(".select__select"));
 
     this.querySelector(".select__select").options[0].selected = true;
-    this.renderPrice(Shopify?.rechargeSubscriptions?.defaultPrice);
+    this.renderPrice(this._containerSelector.dataset.defaultPrice);
   }
 
   selectVariants(element) {
@@ -330,14 +330,14 @@ class RechargeExtension extends HTMLElement {
       "div",
       this._noSubscription,
       this._subscriptionClass,
-      Shopify?.rechargeSubscriptions?.defaultPrice
+      this._containerSelector.dataset?.defaultPrice
     );
 
     const subscriptionBasic = this.createElement(
       "div",
       this._subscription,
       this._subscriptionClass,
-      Shopify?.rechargeSubscriptions?.subscriptionPrice,
+      this._containerSelector.dataset.subscriptionPrice,
       "parent-subscription"
     );
 
@@ -475,15 +475,14 @@ class ProductRechargeExtension extends RechargeExtension {
       "div",
       this._noSubscription,
       this._subscriptionClass,
-      Shopify?.rechargeSubscriptions?.defaultPrice
+      this._containerSelector.dataset.defaultPrice
     );
-    console.log(this._subscription);
 
     const subscriptionBasic = this.createElement(
       "div",
       "Subscribe & save ↺",
       this._subscriptionClass,
-      Shopify?.rechargeSubscriptions?.subscriptionPrice,
+      this._containerSelector.dataset.subscriptionPrice,
       "parent-subscription"
     );
 
@@ -548,7 +547,7 @@ class OneTime extends HTMLElement {
       "div",
       this._noSubscription,
       this._subscriptionClass,
-      Shopify?.rechargeSubscriptions?.defaultPrice
+      this._containerSelector.dataset.defaultPrice
     );
 
     const numberParent = document.createElement("div");

@@ -60,7 +60,13 @@
 
           <div class="rc-custom-injection-point-{{ product3.id }}"></div>
 
-          <div class="gs-custom__recharge gs-thumb__recharge"></div>
+          <div
+            class="gs-custom__recharge gs-thumb__recharge"
+            data-default-price="{{ product3.variants[0].price | money }}"
+            data-subscription-price="{{ product3.variants[1].price | money }}"
+            data-subscription-quarterly-price="{{ product3.variants[2].price | money }}"
+            data-subscription-annually-price="{{ product3.variants[3].price | money }}"
+          ></div>
 
           <input type="submit" value="Add to basket" class="btn btn-white">
         </recharge-small>

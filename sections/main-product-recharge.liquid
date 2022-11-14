@@ -581,7 +581,7 @@
                 </recharge-onetime>
               {% else %}
 
-              <div class="gs-custom__recharge">
+              <div class="gs-custom__recharge" data-default-price="{{ product3.variants[0].price | money }}" data-subscription-price="{{ product3.variants[1].price | money }}" data-subscription-quarterly-price="{{ product3.variants[2].price | money }}" data-subscription-annually-price="{{ product3.variants[3].price | money }}">
                 {% comment %} This container renders JS code {% endcomment %}
               </div>
 
