@@ -1,0 +1,187 @@
+.gs-custom__recharge {
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 0!important;
+    border-radius: 25px;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 1;
+    text-align: left;
+    cursor: pointer;
+
+    .number-parent {
+        border: 1px solid #fff;
+        margin-bottom: 10px;
+        border-radius: 25px;
+    }
+
+    .number-input {
+        .gs-quantity__hide {
+            display: flex;
+            border: none;
+            width: auto;
+            margin-left: 15px;
+            padding: 10px 0;
+
+            .quantity__button {
+                color: #fff;
+                opacity: 1;
+                width: auto;
+            }
+
+            .quantity__input {
+                width: 100%;
+                float: left;
+                height: auto;
+                max-width: 30px;
+                padding: 0;
+            }
+
+            .selected_option {
+                visibility: visible;
+            }
+        }
+    }
+
+    .gs-recharge_subs {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px 20px;
+        border: 1px solid #fff;
+        border-radius: 25px;
+        line-height: 24px;
+        font-size: 16px;
+        max-height: 45px;
+        cursor: pointer;
+
+        p:nth-child(2) {
+            margin-left: 10px;
+        }
+
+        p:nth-child(3) {
+            margin-left: auto;
+        }
+
+        &.parent-subscription.active {
+            flex-direction: column;
+            max-height: 136px;
+            padding-bottom: 20px;
+
+            @media ( max-width: 500px ) {
+                max-height: 200px;
+            }
+        }
+
+        .inner {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        div.checkbox {
+            min-width: 14px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+
+            &:hover {
+                border: 7px double #fff;
+            }
+        }
+
+        &.active {
+            div.checkbox {
+                border: 7px double #fff;
+            }
+        }
+
+        .gs-recharge_subs-inner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+
+            div.checkbox {
+                border: 1px solid #fff;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+                margin-left: 10px;
+            }
+
+            &.active {
+                div.checkbox {
+                    border: 7px double #fff;
+                }
+            }
+        }
+    }
+
+    &.gs-thumb__recharge {
+        margin: 30px 0px;
+
+
+        .gs-recharge_subs.parent-subscription {
+            max-height: 67px;
+            padding: 10px 0px;
+            margin-top: 10px;
+
+            &.active {
+                max-height: 158px;
+                padding: 10px 20px;
+
+                @media ( max-width: 900px ) {
+                    max-height: 251px;
+                    padding: 5px 10px;
+                }
+            }
+
+            .inner {
+                padding: 10px 0px;
+                max-height: 45px;
+                margin: 0 20px;
+            }
+
+            .gs-recharge_subs-inner {
+                padding: 0px 20px;
+
+                &:nth-child(2) {
+                    padding-top: 20px;
+                    padding-bottom: 2px;
+                }
+
+                &:nth-child(3) {
+                    padding-top: 2px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+.gs-quantity__hide {
+    display: none;
+}
+
+.gs-custom__price {
+
+    h2 {
+        font-size: 42px!important;
+        color: #fff;
+        margin: 0;
+    }
+
+    p.gs-custom__description {
+        color: #fff;
+    }
+}
+
+.rc-container-wrapper.rc_container_wrapper {
+    display: none;
+}

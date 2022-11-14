@@ -1,0 +1,285 @@
+{%- if cart != empty -%}
+    {% for tg in cart.items[0].product.tags %}
+    {% if tg contains "upsell_" %}
+    {% assign upsellhandle = tg | replace: 'upsell_', '' %}
+         {% assign cartupsell = all_products[upsellhandle] %}
+        {% endif %}
+    {% endfor %}
+{% assign upsellcheck = true %}
+<div class="cart_items_list">
+   <div id="main-cart-items"> 
+  {%- for item in cart.items -%}
+  {% if upsellhandle == item.product.handle %}
+  {% assign upsellcheck = false %}
+  {% endif %}
+  <div class="cart-notification-product">
+      {% if item.image %}
+        <img class="cart-notification-product__image"
+          src="{{ item.image | img_url: '140x' }}"
+          alt="{{ item.image.alt | escape }}"
+          width="70"
+          height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
+          loading="lazy"
+        >
+      {% endif %}
+      <div class="cart-notification-product__info for_desktop">
+        <h3 class="cart-notification-product__name h4"><span>{{ item.product.title | escape }}</span>
+          {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
+            <dl>
+              {%- if item.product.has_only_default_variant == false -%}
+                {%- for option in item.options_with_values -%}
+                  <div class="product-option">
+                    <dt>{{ option.name }}: </dt>
+                    <dd>{{ option.value }}</dd>
+                  </div>
+                {%- endfor -%}
+              {%- endif -%}
+
+              {%- for property in item.properties -%}
+                {%- assign property_first_char = property.first | slice: 0 -%}
+                {%- if property.last != blank and property_first_char != '_' -%}
+                  <div class="product-option">
+                    <dt>{{ property.first }}: </dt>
+                    <dd>
+                      {%- if property.last contains '/uploads/' -%}
+                        <a href="{{ property.last }}" target="_blank">
+                          {{ property.last | split: '/' | last }}
+                        </a>
+                      {%- else -%}
+                        {{ property.last }}
+                      {%- endif -%}
+                    </dd>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </dl>
+            <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+          {%- endif -%}
+        </h3>
+        <div class="quantity_main">
+        <div class="jar_quantity">
+        {% if item.variant.title contains 'Annually' %}
+         3 Jars
+        {% elsif item.variant.title contains 'Quarterly' %}
+         3 Jars
+        {% elsif item.variant.title contains 'Monthly' %}
+         1 Jar
+        {%else%}
+        1 Jar
+        {%- endif -%}
+        </div>
+         <quantity-input class="quantity">
+          <button class="quantity__button no-js-hidden" name="minus" type="button">
+            <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+           -
+          </button>
+          <input class="quantity__input"
+            type="number"
+            name="updates[]"
+            value="{{ item.quantity }}"
+            min="0"
+            aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+            id="Quantity-{{ item.index | plus: 1 }}"
+            data-index="{{ item.index | plus: 1 }}"
+          >
+<!--            <div class="selected_option">
+      {{ product.metafields.my_fields.jar_text }}
+           </div> -->
+          <button class="quantity__button no-js-hidden" name="plus" type="button">
+            <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+            +
+          </button>
+        </quantity-input>  
+        </div>
+        <cart-remove-button id="Remove-{{forloop.index}}" data-index="{{forloop.index}}" class="removeitem">
+                      <a href="/cart/change?id=40921748340890:3509ed115ec041b7e24371af84679d89&amp;quantity=0" class="button button--tertiary" aria-label="Remove Unplug: Slow-fix your sleep 🥱 - Quarterly Ship Free + Save 20%">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" focusable="false" role="presentation" class="icon icon-remove">
+  <path d="M14 3h-3.53a3.07 3.07 0 00-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 005.53 3H2a.5.5 0 000 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 00.5-.5V4H14a.5.5 0 000-1zM6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02zm4.84 11.52h-7.5V4h7.5v9.5z" fill="currentColor"></path>
+  <path d="M6.55 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5zM9.45 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5z" fill="currentColor"></path>
+</svg>
+
+                      </a>
+                    </cart-remove-button>
+        <div class="cart-item__price-wrapper ">
+          <div class="loading-overlay hidden" style='display:none!important;'>
+            <div class="loading-overlay__spinner">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </div>
+          {%- if item.original_line_price != item.final_line_price -%}
+            <dl class="cart-item__discounted-prices">
+              <dt class="visually-hidden">
+                {{ 'products.product.price.sale_price' | t }}
+              </dt>
+              <dd class="price price--end">
+                {{ item.final_line_price | money }}
+              </dd>
+            </dl>
+          {%- else -%}
+            <span class="price price--end">
+              {{ item.original_line_price | money }}
+            </span>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="cart-notification-product__info for_mobile">
+        <div class="cart-notification-product-info-first">
+          <h3 class="cart-notification-product__name h4"><span>{{ item.product.title | escape }}</span>
+            {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
+              <dl>
+                {%- if item.product.has_only_default_variant == false -%}
+                  {%- for option in item.options_with_values -%}
+                    <div class="product-option">
+                      <dt>{{ option.name }}: </dt>
+                      <dd>{{ option.value }}</dd>
+                    </div>
+                  {%- endfor -%}
+                {%- endif -%}
+  
+                {%- for property in item.properties -%}
+                  {%- assign property_first_char = property.first | slice: 0 -%}
+                  {%- if property.last != blank and property_first_char != '_' -%}
+                    <div class="product-option">
+                      <dt>{{ property.first }}: </dt>
+                      <dd>
+                        {%- if property.last contains '/uploads/' -%}
+                          <a href="{{ property.last }}" target="_blank">
+                            {{ property.last | split: '/' | last }}
+                          </a>
+                        {%- else -%}
+                          {{ property.last }}
+                        {%- endif -%}
+                      </dd>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </dl>
+              <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+            {%- endif -%}
+          </h3>
+          
+          <div class="cart-item__price-wrapper ">
+            <div class="loading-overlay hidden" style='display:none!important;'>
+              <div class="loading-overlay__spinner">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </div>
+            {%- if item.original_line_price != item.final_line_price -%}
+              <dl class="cart-item__discounted-prices">
+                <dt class="visually-hidden">
+                  {{ 'products.product.price.sale_price' | t }}
+                </dt>
+                <dd class="price price--end">
+                  {{ item.final_line_price | money }}
+                </dd>
+              </dl>
+            {%- else -%}
+              <span class="price price--end">
+                {{ item.original_line_price | money }}
+              </span>
+            {%- endif -%}
+          </div>
+        </div>
+        
+        <quantity-input class="quantity">
+          <button class="quantity__button no-js-hidden" name="minus" type="button">
+            <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+            -
+          </button>
+          <input class="quantity__input"
+            type="number"
+            name="updates[]"
+            value="{{ item.quantity }}"
+            min="0"
+            aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+            id="Quantity-{{ item.index | plus: 1 }}"
+            data-index="{{ item.index | plus: 1 }}"
+          >
+          <button class="quantity__button no-js-hidden" name="plus" type="button">
+            <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+            +
+          </button>
+        </quantity-input> 
+      </div>
+    </div>   
+           <!--         <div class="line-item__subscription product-subscription">
+                    <div class="checkbox product-subscription__radio">
+                      <input class="checkbox__input product-subscription__radio-input {% if item.product.title contains 'Auto renew' %}product-subscribe{% else %}product-normal{% endif %}" type="checkbox" name="purchase_type" value="{{ item.product.metafields.subscriptions.discount_variant_id }}" data-line="{{ forloop.index}}" data-base-variant-id="{{ baseid }}" data-variant-id="{{ item.variant.id }}" data-sub-id="199234" data-sub-unit="Months" data-sub-number="2" {% if item.product.title contains 'Auto renew' %}checked{% endif %}>
+                      <label class="checkbox__label product-subscription__radio-label product-subscription__radio-label-inner label--subscribe" for="purchase_type">
+                        <span>Subscribe and Save 15%</span>
+                      </label>
+                      <div class="tooltip">
+
+                        <span class="tooltiptext">Save 15% right now when you subscribe. Delivers every 2 months. Cancel anytime.</span>
+                      </div>
+                      <div class="loader">
+                      	<div class="loader-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+  <div class="cart-swatch-block">
+    <div class="cart-swatch-detail">
+      <h4>Switch to subscription</h4>
+      <ul>
+        <li>Get £10 off</li>
+        <li>Plus free shipping</li>
+        <li>Pause, skip, cancel anytime</li>
+      </ul>  
+    </div>
+    <div class="cart-swatch-button">
+      <a href="#">Switch</a>
+    </div>
+  </div>-->
+  {%- endfor -%}
+  </div>
+ {% if upsellcheck and cartupsell %}
+  <div class="cart-upsell-box">
+    <h3>You’re £6 away from free shipping</h3>
+
+    <div class="cart-upsell-block">
+      <div class="cart-upsell-image">
+        <img src="{{cartupsell.images[0] | img_url: 'small'}}">
+      </div>
+ 
+      <div class="cart-upsell-detail">
+        <span>
+        <h4>{{cartupsell.title}}</h4>
+        <p>Add for less stress</p>
+        </span>
+        <product-form class="product-form">      
+        <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{cartupsell.selected_or_first_available_variant.id}}">
+  <input type="submit" value="+" class="btn btn-white submit hidden" >
+          <a href="#" class="plus-btn">+</a>
+</form>
+        </product-form>       
+          </div>    
+    </div>
+
+  </div>
+  {% endif %}
+         <div class="cart_notification_footer" id="main-cart-footer" data-id="">
+                <div class="totals">
+               <!--   <a href="#" class="cart-apply-code">+ Apply promo code</a> -->
+                  <span>
+                  <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
+                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                  </span>
+                    </div>
+                <p class="shipping-txt">Shipping  &nbsp; - -</p>
+                  <p class="calculated_caption">Shipping & promotions calculated at checkout</p>
+              </div>
+        
+        <div class="cart-notification__links">
+        <a href="{{ routes.cart_url }}" id="cart-notification-button" class="button button--secondary button--full-width"></a>
+   <form action="{{ routes.cart_url }}" method="post" id="cart">
+          <button class="button button--primary button--full-width"  name="checkout" form="cart">CHECKOUT</button>
+          </form>
+        <button type="button" class="link button-label">{{ 'general.continue_shopping' | t }}</button>
+      </div>
+</div>
+{%- endif -%}

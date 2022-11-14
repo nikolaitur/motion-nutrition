@@ -1,0 +1,277 @@
+{
+  "sections": {
+    "1639556400a93d5be7": {
+      "type": "home-latest-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/girl_holding_unplug.png",
+        "tag": "",
+        "title": "Let's make you feel good. <br><br> We believe that with deeper sleep, less stress and more energy, everything in life works better.",
+        "content": "",
+        "btn-title": "",
+        "btn-link": ""
+      }
+    },
+    "1639555778607e0a6e": {
+      "type": "image-banner",
+      "disabled": true,
+      "blocks": {
+        "1639555778cd2efc2c-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Let's make you feel good. We believe that with deeper sleep, less stress and more energy, everything in life works better."
+          }
+        },
+        "1639555778cd2efc2c-1": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "1639555778cd2efc2c-2": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "1639555778cd2efc2c-0",
+        "1639555778cd2efc2c-1",
+        "1639555778cd2efc2c-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Untitled_design-3.jpg",
+        "desktop_text_box_position": "center",
+        "color_scheme": "background-1",
+        "stack_images_on_mobile": true,
+        "adapt_height_first_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1639554823097d4378": {
+      "type": "image-with-text",
+      "blocks": {
+        "1639554823cc7bf5aa-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "We make honest things"
+          }
+        },
+        "1639554823cc7bf5aa-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You shouldn’t have to compromise when it comes to nourishing your body. That is why our products are thoughtfully made to be free from junk – there are no fillers, no synthetic flavourings, no soy, no gluten and when possible, everything we use is organic. <br\/><\/p>"
+          }
+        },
+        "1639554823cc7bf5aa-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1639554823cc7bf5aa-0",
+        "1639554823cc7bf5aa-1",
+        "1639554823cc7bf5aa-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MN-PowerUp-Hand.png",
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "image_first"
+      }
+    },
+    "16395550207a3ee9b8": {
+      "type": "image-with-text",
+      "blocks": {
+        "16395550208d5d6af9-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "that don't quick-fix"
+          }
+        },
+        "16395550208d5d6af9-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Instant fixes never work, even if they give a short relief. <a href=\"https:\/\/motionnutrition.com\/products\/unplug\" title=\"Unplug\">Unplug<\/a> helps you slow-fix your sleep, but doesn't knock you out. <a href=\"https:\/\/motionnutrition.com\/products\/power-up\">Power Up<\/a> helps you stay alert, but without the coffee-like stimulation and <a href=\"https:\/\/motion-nutrition.myshopify.com\/pages\/about?atclid=5w9YlYIqPiTp9https:\/\/motionnutrition.com\/products\/hormone-balance\">Balance<\/a> helps you feel at ease with regular use.<\/p>"
+          }
+        },
+        "16395550208d5d6af9-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16395550208d5d6af9-0",
+        "16395550208d5d6af9-1",
+        "16395550208d5d6af9-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/girl_holds_balance.png",
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "text_first"
+      }
+    },
+    "1639555401f98d4f2d": {
+      "type": "image-with-text",
+      "blocks": {
+        "163955540195b76751-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "but save our planet"
+          }
+        },
+        "163955540195b76751-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In 2019, we removed plastic from the packaging of our protein powders. We switched to beautiful, eco-friendly refillable tins that reduce waste and delivery emissions. Since then, we’ve saved over a 500,000 plastic-laminated pouches from entering our eco-system. And by getting rid of scoops and plastic tubs, we’ve avoided 10 tonnes’ worth of plastic going to waste. We chose planet over profit, because there is no planet B.<\/p>"
+          }
+        },
+        "163955540195b76751-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "163955540195b76751-0",
+        "163955540195b76751-1",
+        "163955540195b76751-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MN-Unplug-Hand.png",
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "image_first"
+      }
+    },
+    "16527926223e031e3e": {
+      "type": "image-with-text",
+      "blocks": {
+        "1652792622e29feb6d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who are we?"
+          }
+        },
+        "1652792622e29feb6d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With a love for feel-good food that gets you ready to smash the day, Joe Welstead and Charlie Matthews co-founded Motion Nutrition in 2016. <\/p><p>Joe is a former professional swimmer who spent years training over 25 hours per week - a stressful, gruelling regime that made restorative sleep difficult. <\/p><p>Working with leading Neuroscientists and Nutritionists, Charlie and Joe developed Motion Nutrition's range of award-winning products. <\/p><p>Today everything we do is designed to help you and your whole family sleep deeper, stress less and have more energy. So that with the smallest intervention possible, we can have the greatest positive impact in your life.<\/p><p><\/p>"
+          }
+        },
+        "1652792622e29feb6d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop our range",
+            "button_link": "https:\/\/motion-nutrition.myshopify.com\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "1652792622e29feb6d-0",
+        "1652792622e29feb6d-1",
+        "1652792622e29feb6d-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Motion_founders.png",
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "text_first"
+      }
+    },
+    "163955731816a4a708": {
+      "type": "home-blog-posts",
+      "settings": {
+        "heading": "Our wall of ♥️"
+      }
+    },
+    "163955708024f98d8f": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script src=\"https:\/\/apps.elfsight.com\/p\/platform.js\" defer><\/script>\n<div class=\"elfsight-app-7bb06f32-4ce4-4ea4-8b7d-2596f7d37dea\"><\/div>\n\n<br>"
+      }
+    },
+    "163955664426b7699e": {
+      "type": "home-products-section",
+      "settings": {
+        "heading": "<br>",
+        "product-1": "unplug",
+        "product-2": "power-up",
+        "product-3": "hormone-balance"
+      }
+    },
+    "1639556655ee9a44ab": {
+      "type": "client-logo-section",
+      "disabled": true,
+      "blocks": {
+        "b7c30a74-f40c-447c-994c-dbfc719a3433": {
+          "type": "logo",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "b7c30a74-f40c-447c-994c-dbfc719a3433"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "16395569809175ab08": {
+      "type": "product-testimonial-section",
+      "disabled": true,
+      "blocks": {
+        "25c35210-b150-4a56-9ab8-5784cebaa004": {
+          "type": "testimonial",
+          "settings": {
+            "content": "",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "25c35210-b150-4a56-9ab8-5784cebaa004"
+      ],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "1639556400a93d5be7",
+    "1639555778607e0a6e",
+    "main",
+    "1639554823097d4378",
+    "16395550207a3ee9b8",
+    "1639555401f98d4f2d",
+    "16527926223e031e3e",
+    "163955731816a4a708",
+    "163955708024f98d8f",
+    "163955664426b7699e",
+    "1639556655ee9a44ab",
+    "16395569809175ab08"
+  ]
+}

@@ -1,0 +1,237 @@
+<div class="home-tabs-section">
+  <div class="page-width">
+    <div class="tab">
+  <button class="tablinks active" onclick="openCity(event, 'tab1')">Recent</button>
+  <button class="tablinks" onclick="openCity(event, 'tab2')">Recommended</button>
+</div>
+    
+    <div id="tab1" class="tabcontent" style="display: block;">
+ <div class="grid grid--3-col-desktop">
+   <div class="grid__item">
+   {% assign product1 = all_products[ section.settings.recent-product-1 ] %}
+    <a href="{{ product1.url }}" class="tab-block" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product"> 
+     <img alt="{{ product1.title | escape }}" class="img-bg-yellow" src="{{ product1.featured_image | product_img_url: 'master' }}">
+      <span>
+        <h3> {{ product1.title }}</h3>
+<product-form class="product-form">        
+        <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ product1.variants.first.id }}" />
+  <input type="submit" value="Add to basket" class="submit-btn" />
+</form>
+</product-form>    
+      </span>
+     </a>
+   </div>
+   
+   <div class="grid__item">
+   {% assign product2 = all_products[ section.settings.recent-product-2 ] %}
+    <a href="{{ product2.url }}" class="tab-block" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product"> 
+     <img alt="{{ product2.title | escape }}" class="img-bg-pink" src="{{ product2.featured_image | product_img_url: 'master' }}">
+      <span>
+        <h3> {{ product2.title }}</h3>
+  <product-form class="product-form">        
+        <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ product2.variants.first.id }}" />
+  <input type="submit" value="Add to basket" class="submit-btn" />
+</form>
+        </product-form>
+      </span>
+     </a>
+   </div>
+   
+   
+   <div class="grid__item">
+    <div class="tab-block"> 
+     <img src="{{ section.settings.image | img_url: 'master' }}">
+      <span>
+        <h3> {{ section.settings.title }}</h3>
+        {% if section.settings.btn-link != blank %}<a href="{{ section.settings.btn-link }}">{{ section.settings.btn-title }}</a>{% endif %}
+      </span>
+     </div>
+   </div>
+   
+   
+   
+      </div>
+</div>
+ 
+    <div id="tab2" class="tabcontent">
+<div class="grid grid--3-col-desktop">
+   <div class="grid__item">
+   {% assign recommended-product1 = all_products[ section.settings.recommended-product-1 ] %}
+    <a href="{{ recommended-product1.url }}" class="tab-block" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product"> 
+     <img alt="{{ recommended-product1.title | escape }}" src="{{ recommended-product1.featured_image | product_img_url: 'master' }}">
+      <span>
+        <h3> {{ recommended-product1.title }}</h3>
+  <product-form class="product-form">        
+        <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ recommended-product1.variants.first.id }}" />
+  <input type="submit" value="Add to basket" class="submit-btn" />
+</form>
+        </product-form>   
+      </span>
+     </a>
+   </div>
+   
+   <div class="grid__item">
+   {% assign recommended-product2 = all_products[ section.settings.recommended-product-2 ] %}
+    <a href="{{ recommended-product2.url }}" class="tab-block" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product"> 
+     <img alt="{{ recommended-product2.title | escape }}" src="{{ recommended-product2.featured_image | product_img_url: 'master' }}">
+      <span>
+        <h3> {{ recommended-product2.title }}</h3>
+  <product-form class="product-form">        
+        <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ recommended-product2.variants.first.id }}" />
+  <input type="submit" value="Add to basket" class="submit-btn" />
+</form>
+        </product-form>
+      </span>
+     </a>
+   </div>
+   
+   
+    <div class="grid__item">
+   {% assign recommended-product3 = all_products[ section.settings.recommended-product-3 ] %}
+    <a href="{{ recommended-product3.url }}" class="tab-block" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product"> 
+     <img alt="{{ recommended-product3.title | escape }}" src="{{ recommended-product3.featured_image | product_img_url: 'master' }}">
+      <span>
+        <h3> {{ recommended-product3.title }}</h3>
+  <product-form class="product-form">        
+        <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ recommended-product3.variants.first.id }}" />
+  <input type="submit" value="Add to basket" class="submit-btn" />
+</form>
+        </product-form>  
+      </span>
+     </a>
+   </div>
+   
+   
+   
+      </div>
+</div>
+    
+  </div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<script>
+  $(document).ready(function(){
+    if( $(window).width() < 749 ){
+      $('#tab1 .grid').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+         fade: true,
+        autoplay: true,
+  autoplaySpeed: 2000
+      });
+    }
+    });
+  
+</script>
+<script>
+  $(document).ready(function(){
+    if( $(window).width() < 749 ){
+      $('#tab2 .grid').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+         fade: true,
+        autoplay: true,
+  autoplaySpeed: 2000
+      });
+    }
+    });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Home Tabs Section",
+ "class": "spaced-section spaced-section--full-width home-tab-section-main",
+    "settings": [
+{
+      "type": "header",
+      "content": "Tab 1"
+    },
+{
+      "type": "product",
+      "id": "recent-product-1",
+      "label": "Recent Product 1"
+    },
+{
+      "type": "product",
+      "id": "recent-product-2",
+      "label": "Recent Product 2"
+    },
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+{
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+{
+      "type": "text",
+      "id": "btn-title",
+      "label": "Btn Title"
+    },
+{
+      "type": "url",
+      "id": "btn-link",
+      "label": "Btn Link"
+    },
+{
+      "type": "header",
+      "content": "Tab 2"
+    },
+{
+      "type": "product",
+      "id": "recommended-product-1",
+      "label": "Recent Product 1"
+    },
+{
+      "type": "product",
+      "id": "recommended-product-2",
+      "label": "Recent Product 2"
+    },
+{
+      "type": "product",
+      "id": "recommended-product-3",
+      "label": "Recent Product 3"
+    }
+
+],
+  "presets": [
+    {
+      "name": "Home Tabs Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

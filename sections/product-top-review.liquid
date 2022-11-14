@@ -1,0 +1,23 @@
+<p>&#9733; &#9733; &#9733; &#9733; &#9733; <i>“Lorem ipsum dolor sit amet, consectetuer adipiscing”</i> <a href="#">See more reviews</a></p>   
+{% for block in section.blocks %}
+  {% assign _pro = all_products[block.settings.product] %}
+  {% if _pro.handle == product.handle %}
+     <div class="product-top-review-block">
+        <p>{{ block.settings.star-icon }} <i>{{ block.settings.review-text }}</i> <a href="{{ block.settings.see-more-link }}">{{ block.settings.see-more-text }}</a></p>
+        
+      </div>
+       {% endif %}
+  {% endfor %}
+
+{% schema %}
+  {
+    "name": "Product Top Review",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

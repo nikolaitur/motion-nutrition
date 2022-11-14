@@ -1,0 +1,272 @@
+{% for block in section.blocks %}
+  {% assign _pro = all_products[block.settings.product] %}
+  {% if _pro.handle == product.handle %}
+<div class="home-product-section">
+  {% if block.settings.heading != blank %}
+  <div class="home-product-header">
+    <h2>{{ block.settings.heading }}</h2>
+  </div>
+  {% endif %}
+  <div class="grid grid--3-col-desktop">
+    
+    
+    <div class="grid__item">
+    {% assign product1 = all_products[ block.settings.product-1 ] %}
+    {% assign prohandle1_2 = block.settings.product-1 | append: '-annually' %}
+    {% assign product1_2 = all_products[prohandle1_2] %}  
+    {% render 'product-grid-subscription', product3: product1, product3_2: product1_2, blockid: 1  %}     
+    </div>
+    
+    <div class="grid__item">
+    {% assign product2 = all_products[ block.settings.product-2 ] %}
+    {% assign prohandle2_2 = block.settings.product-2 | append: '-annually' %}
+    {% assign product2_2 = all_products[prohandle2_2] %}       
+    {% render 'product-grid-subscription', product3: product2, product3_2: product2_2, blockid: 2   %} 
+    </div>
+    
+    <div class="grid__item">
+    {% assign product3 = all_products[ block.settings.product-3 ] %}     
+    {% assign prohandle3_2 = block.settings.product-3 | append: '-annually' %}
+    {% assign product3_2 = all_products[prohandle3_2] %}       
+    {% render 'product-grid-subscription', product3: product3, product3_2: product3_2, blockid: 3   %}      
+    </div>
+
+    
+  </div>
+</div>
+
+<style>
+  .home-product-section .hps-block-1 {
+    background: {{ block.settings.backround-color-1 }};
+}
+  {% if block.settings.backround-image-1 != blank %}
+  .hps-block-1 .hps-block-image {
+	background: url({{ block.settings.backround-image-1 | img_url: 'master' }});
+	background-repeat: no-repeat;
+	background-position: center;
+}
+  {% endif %}
+   .home-product-section .hps-block-2 {
+    background: {{ block.settings.backround-color-2 }};
+}
+   {% if block.settings.backround-image-2 != blank %}
+  .hps-block-2 .hps-block-image {
+	background: url({{ block.settings.backround-image-2 | img_url: 'master' }});
+	background-repeat: no-repeat;
+	background-position: center;
+}
+   {% endif %}
+   .home-product-section .hps-block-3 {
+    background: {{ block.settings.backround-color-3 }};
+}
+   {% if block.settings.backround-image-3 != blank %}
+  .hps-block-3 .hps-block-image {
+	background: url({{ block.settings.backround-image-3 | img_url: 'master' }});
+	background-repeat: no-repeat;
+	background-position: center;
+}
+   {% endif %}
+.subscribe-price-top span.price-item.price-item--sale, .subscribe-price-top span.price-item.price-item--regular {
+    font-size: 58px;
+    line-height: 60px;
+    color: #fff;
+}  
+</style>
+
+ {% endif %}
+  {% endfor %}
+
+<script>
+
+     var vrnt = $(this).parents('form').find(".select__select option[data-title='one time']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');  
+  
+  $(".grid_rc_container > ul > li > .grid_rc_opt").mouseup(function(e){
+    var container = $(".grid_rc_container > ul > li > .grid_rc_opt input");
+ console.log('here567');
+    // If the target of the click isn't the container
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+    $(this).find('input[type="radio"]').click();
+    }
+});
+  $(".delivery-days > li").mouseup(function(e){
+    var container = $(".delivery-days > li input");
+ console.log('here567');
+    // If the target of the click isn't the container
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+    $(this).find('input[type="radio"]').click();
+    }
+});  
+  
+  $('.grid_rc_container input[type="radio"]').change(function(event){
+    console.log($(this).val());
+    var val = $(this).val();
+    if(val == 'subscribe'){
+    $(this).parents('form').find('.selling_plan').attr('name','selling_plan');
+      $(this).parents('form').find(".deliverytext").show();
+     var vrnt = $(this).parents('form').find(".select__select option[data-title='Monthly Save 10%']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');
+       $(".subscribe-price-bottom p").html("↺ 1 Jar every 30 days. Cancel anytime");
+      $(this).parents('form').find(".quantity__input").attr('name',''); 
+    }else if(val == 'one time'){
+    $(this).parents('form').find('.selling_plan').attr('name',''); 
+      $(this).parents('form').find(".deliverytext").hide();
+     var vrnt = $(this).parents('form').find(".select__select option[data-title='one time']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');    
+  $(this).parents('form').find(".quantity__input").attr('name','quantity'); 
+    $(".subscribe-price-bottom p").html("");   
+    }
+  });
+  
+  $('body').on("change", ".selling_plandays", function(){
+     var plannm = $(this).data('plan-option');
+    var vrnt = $(this).parents('form').find(".select__select option[data-title='"+plannm+"']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');
+    var daysoption =  $(this).parents('form').find("#selling_plan option:selected").data('plan-option');
+  $(this).parents('form').find(".selling_plan").val($(this).val()).trigger('change');
+var msg = '';
+    if(plannm == "Monthly Save 10%"){
+      msg = '{{section.settings.monthly-text}}';    
+    }else if(plannm == "Quarterly Ship Free + Save 20%"){
+ msg = '{{section.settings.quarterly-text}}';
+
+    }else if(plannm == "Annually Ship Free + Save 33%"){
+ msg = '{{section.settings.annual-text}}';
+    }
+
+    $(".subscribe-price-bottom p").html(msg);
+
+    //  $('.product__info-container input[value="'+plannm+'"]').click();
+  });  
+</script>
+
+{% unless section.settings.show-bottom-text %}
+<style>
+  .grid_rc_container.QQ .subscribe-price-bottom {
+  	display:none;
+  }
+</style>
+{%endunless%}
+
+{% schema %}
+  {
+    "name": "Product Products Section",
+    "settings": [
+	{
+      "type": "header",
+      "content": "Text Below Variant Buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-bottom-text",
+      "label": "Show Text",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "monthly-text",
+      "label": "Monthly Text",
+      "default": "↺ 1 Jar every 30 days. Cancel anytime"
+    },
+    {
+      "type": "text",
+      "id": "quarterly-text",
+      "label": "Quarterly Text",
+      "default": "↺ 3 Jar every 90 days. Cancel anytime"
+    },
+    {
+      "type": "text",
+      "id": "annual-text",
+      "label": "Annual Text",
+      "default": "↺ 3 Jar every 90 days. Cancel anytime"
+    }
+],
+"blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+{
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+{
+"type": "header",
+"content": "product 1"
+},
+{
+      "type": "product",
+      "id": "product-1",
+      "label": "Product 1"
+    },
+{
+      "type": "color",
+      "id": "backround-color-1",
+      "label": "Backround Color"
+    },
+{
+      "type": "image_picker",
+      "id": "backround-image-1",
+      "label": "Backround Image"
+    },
+{
+"type": "header",
+"content": "product 2"
+},
+{
+      "type": "product",
+      "id": "product-2",
+      "label": "Product 2"
+    },
+{
+      "type": "color",
+      "id": "backround-color-2",
+      "label": "Backround Color"
+    },
+{
+      "type": "image_picker",
+      "id": "backround-image-2",
+      "label": "Backround Image"
+    },
+{
+"type": "header",
+"content": "product 3"
+},
+{
+      "type": "product",
+      "id": "product-3",
+      "label": "Product 3"
+    },
+{
+      "type": "color",
+      "id": "backround-color-3",
+      "label": "Backround Color"
+    },
+{
+      "type": "image_picker",
+      "id": "backround-image-3",
+      "label": "Backround Image"
+    }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Products Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

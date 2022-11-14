@@ -1,0 +1,44 @@
+h2.cart-notification__heading.caption-large {display: none;}
+.cart-notification__header h4 {margin-bottom: 8px;margin-top: 20px;text-transform: uppercase;font-weight: 700;margin-bottom: 0;font-size: 20px;line-height: 23px;color: #140D38;}
+.header__inline-menu .header__menu-item {text-transform: uppercase;}
+#shopify-section-header.animate {transition: .1s;transition-duration: 1s;}
+div#cart-drawerr button.button.button--primary.button--full-width {cursor: pointer;border: none;background: #6b69db;text-decoration: none;border-radius: 32px;padding: 22px 35px;display: inline-block;font-size: 15px;line-height: 17px;color: #fff;font-weight: 700;letter-spacing: normal;transition: transform .25s ease-out,opacity .25s ease-out,box-shadow .25s ease-out,opacity .25s ease-out;box-shadow: 4px 8px 0 #4a42d0;margin-bottom: 10px;width: 45%;float: left;}
+div#cart-drawerr a#cart-notification-button {display: none;}
+div#cart-drawerr button.link.button-label {display: none;}
+div#cart-drawerr .cart-notification-product__name {text-decoration-line: underline;color: #140D38;font-size: 15px;line-height: 23px;font-weight: bold;}
+div#cart-drawerr .cart-notification {position: fixed;background: #fff;top: 35px;padding:3.5rem 3.5rem;max-width: 480px;/*height: 740px;*/right: 0;z-index: 99999;transform: translateX(30px);}
+div#cart-drawerr .cart-notification.active {transform: translateX(0px) !important;  transition: transform 1s;}
+div#cart-drawerr .header__icon img {width: 26px;}
+div#cart-drawerr a.header__icon.header__icon--account.link.link--text.focus-inset img {width: 28px !important;}
+div#cart-drawerr .modal__close-button .icon {display: none;}
+div#cart-drawerr .cart-notification__header {display: block;margin-top: 16px;}
+div#cart-drawerr .modal__close-button.link {display: inline-flex;margin-left: -20px;}
+div#cart-drawerr .header__icon {display: flex !important;}
+div#cart-drawerr .header__icons {float: right;margin-top: -12px;}
+div#cart-drawerr div#cart-notification-product img.cart-notification-product__image {width: 53px;height: 53px;object-fit: contain;}
+div#cart-drawerr .cart-notification-product__option.h4 {display: none;}
+.select_body .shopify-section-header-hidden {transform: translateY(0%);}
+div#cart-drawerr .cart_notification_footer {border-top: 2px solid #140D38;padding-top: 20px;padding-bottom: 15px;}
+div#cart-drawerr .cart_notification_footer h3.totals__subtotal, div#cart-drawerr .cart_notification_footer p.totals__subtotal-value, div#cart-drawerr .cart_notification_footer p.shipping-txt {font-size: 15px;line-height: 27px;text-align: right;color: #140D38;font-weight: bold;padding-left: 18px;margin: 0;}
+div#cart-drawerr .calculated_caption {font-size: 14px;line-height: 23px;text-align: right;margin: 0;color: #140D38;font-style:italic;}
+div#cart-drawerr .cart_notification_footer .totals {display: flex;justify-content: flex-end;}
+#shopify-section-header {will-change: unset;}
+div#cart-notification.scrolledd {top: 0px;}
+
+@media screen and (max-width:989px) {
+.js .menu-drawer__menu li:nth-child(1) a:before {content: url(https://cdn.shopify.com/s/files/1/0565/0854/7226/files/unplug.jpg?v=1627563319);margin-right: 14px;margin-top: 8px;}
+.js .menu-drawer__menu li:nth-child(2) a:before {content: url(https://cdn.shopify.com/s/files/1/0565/0854/7226/files/powerup.jpg?v=1627563319);margin-right: 14px;margin-top: 8px;}
+.js .menu-drawer__menu li:nth-child(3) a:before {content: url(https://cdn.shopify.com/s/files/1/0565/0854/7226/files/hormone.jpg?v=1627563319);margin-right: 14px;margin-top: 8px;}
+.js .menu-drawer__menu li a.menu-drawer__menu-item {font-size: 30px;line-height: 33px;padding: 1.1rem 2.0rem;font-weight: bold;}
+.js .menu-drawer__menu li:nth-child(1) a.menu-drawer__menu-item {color: #6B69DB;}
+.js .menu-drawer__menu li:nth-child(2) a.menu-drawer__menu-item {color: #FFA557;}
+.js .menu-drawer__menu li:nth-child(3) a.menu-drawer__menu-item {color: #FE88C0;}
+}
+
+@media screen and (max-width: 480px){
+.js .menu-drawer__menu li a.menu-drawer__menu-item {font-size: 25px;line-height: 27px;}
+div#cart-drawerr .cart-notification {max-width: 300px;padding: 2.5rem 1.5rem;}
+div#cart-drawerr button.button.button--primary.button--full-width {width: 60%;padding: 16px 23px;}
+.calculated_caption {line-height: 18px;padding-top: 7px;}
+.cart_notification_footer h3.totals__subtotal, p.shipping-txt, p.totals__subtotal-value {font-size: 14px;padding-left: 10px;}
+}

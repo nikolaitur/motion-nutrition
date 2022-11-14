@@ -1,0 +1,85 @@
+  {% for block in section.blocks %}
+  {% assign _pro = all_products[block.settings.product] %}
+  {% if _pro.handle == product.handle %}
+<div class="product-left-image" style="background:{{ block.settings.bg-color }}" >
+  <div class="page-width">
+    <div class="grid grid--2-col-desktop grid--2-col-mobile">
+       <div class="product-li-detail small-heading">
+          {% if block.settings.title != blank %}<h2>{{ block.settings.title }}</h2>{% endif %}
+        </div>
+      <div class="grid__item">
+        {% if block.settings.image != blank %}
+        <div class="product-li-image" {% if block.settings.bg-image != blank %}style="background:url({{ block.settings.bg-image | img_url: 'master' }})"{% endif %}>
+          <img src="{{ block.settings.image | img_url: 'master' }}">
+        </div>
+        {% endif %}
+      </div>
+      <div class="grid__item">
+        <div class="product-li-detail big-heading">
+          {% if block.settings.title != blank %}<h2>{{ block.settings.title }}</h2>{% endif %}
+           {% if block.settings.content != blank %}<span>{{ block.settings.content }}</span>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   {% endif %}
+  {% endfor %}
+
+{% schema %}
+{
+  "name": "Product Left Image",
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+{
+          "type": "color",
+          "id": "bg-color",
+          "label": "Background Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+ {
+          "type": "image_picker",
+          "id": "bg-image",
+          "label": "Background Image"
+        },
+{
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+{
+          "type": "html",
+          "id": "content",
+          "label": "Content"
+        }
+
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Left Image",
+      "category": "Home Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

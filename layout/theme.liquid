@@ -1,0 +1,441 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+
+<script>
+/* >> TriplePixel :: start*/
+~function(W,H,A,L,E){try{A.setItem(H,1+(0|A.getItem(H)||0)),W.includes("⇈")&&A.setItem(H+"Stg",1+(0|A.getItem(H+"Stg")||0))}catch(e){}function O(T,R){void 0===R&&(R=!1),H=new XMLHttpRequest,H.open("GET","//triplewhale-pixel.web.app/triplepx.txt?"+~(Date.now()/9e7),!0),H.send(null),H.onreadystatechange=function(){4===H.readyState&&200===H.status?setTimeout(function(){return eval(H.responseText)},50):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(T-1))}}A=window,A[H]||(L=function(){return"tp.."+Date.now().toString(36)+Math.random().toString(36)},E=A[H]=function(t,e,n){return W=L(),(E._q=E._q||[]).push([W,e,n]),W},E.ch=W,O(5))}("","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+
+
+    <script>
+(function(g,e,o,t,a,r,ge,tl,y){
+t=g.getElementsByTagName(o)[0];y=g.createElement(e);y.async=true;
+y.src='https://g1188506010.co/gb?id=-MkvpkZZf58iaHhjcWOe&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+t.parentNode.insertBefore(y,t);
+})(document,'script','head');
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+
+    {%- if template == 'page.noindex' -%}
+      <meta name="robots" content="noindex,nofollow">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <title>{{ page_title }}</title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <script defer src="{{ 'global.js' | asset_url }}"></script>
+
+  {{ content_for_header }}
+
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
+    {% style %}
+      .antiCls { 
+        visibility: hidden;
+      }
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+      {{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+      :root {
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-style: {{ settings.type_body_font.style }};
+        --font-body-weight: {{ settings.type_body_font.weight }};
+
+        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-style: {{ settings.type_header_font.style }};
+        --font-heading-weight: {{ settings.type_header_font.weight }};
+
+        --color-base-text: {{ settings.colors_text }};
+        --color-base-text-rgb: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
+        --color-base-background-1: {{ settings.colors_background_1 }};
+        --color-base-background-1-rgb: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
+        --color-base-background-2: {{ settings.colors_background_2 }};
+        --color-base-background-2-rgb: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
+        --color-base-solid-button-labels: {{ settings.colors_solid_button_labels }};
+        --color-base-solid-button-labels-rgb: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
+        --color-base-outline-button-labels: {{ settings.colors_outline_button_labels }};
+        --color-base-outline-button-labels-rgb: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
+        --color-base-accent-1: {{ settings.colors_accent_1 }};
+        --color-base-accent-1-rgb: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
+        --color-base-accent-2: {{ settings.colors_accent_2 }};
+        --color-base-accent-2-rgb: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+        height: 100%;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100%;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 0.06rem;
+        line-height: 1.8;
+        font-family: var(--font-body-family);
+        font-style: var(--font-body-style);
+        font-weight: var(--font-body-weight);
+      }
+
+      @media screen and (min-width: 750px) {
+        body {
+          font-size: 1.6rem;
+        }
+      }
+    {% endstyle %}
+    <link rel="preload" as="style" href="{{ 'base.css' | asset_url }}"  >
+    <link rel="preload" as="style" href="{{ 'slick.css' | asset_url }}"  >
+    <link rel="preload" as="style" href="{{ 'slick-theme.css' | asset_url }}"  >
+    <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}"  >
+    <link rel="preload" as="style" href="{{ 'cart.css' | asset_url }}">
+    <link rel="preload" as="style" href="{{ 'gs-custom_css.css' | asset_url }}">
+    
+    <link rel="preload" as="script" href="https://code.jquery.com/jquery-2.2.0.min.js">
+    <link rel="preload" as="script" href="{{ 'slick.js' | asset_url }}">
+  
+    <link rel="preload" as="script" href="{{ 'cart.js' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'product-form.js' | asset_url }}">
+  
+  
+
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {{ 'cart.css' | asset_url | stylesheet_tag }}
+
+      {% comment %} GS recharge css {% endcomment %}
+      {{ 'gs-custom_css.css' | asset_url | stylesheet_tag }}
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+ <script src="{{ 'slick.js' | asset_url }}"></script>
+
+    {%- unless settings.type_body_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_header_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+  <script defer src="{{ 'product-form.js' | asset_url }}"></script>
+<script defer src="{{ 'cart.js' | asset_url }}"></script>
+    <script async src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" type="text/javascript"></script>
+  
+
+
+{% render 'minmaxify-head' %}
+{% include 'sca.freegifts' %}
+{% render 'builder-head' %}
+{% capture boostersnippet %}{% include "booster-apps-common" %}{% endcapture %}{% unless boostersnippet contains "Liquid error" %}{{ boostersnippet }}{% endunless %}
+{% if request.design_mode %}
+<script async src="https://cdn.builder.io/js/webcomponents"></script>
+{% endif %}
+        
+{% render 'sca-aff-refer-customer' %}
+{% include 'swift_core' %} 
+ <script async src='{{ "sca.affiliate.data.js" | asset_url }}'></script>
+<script async src='{{ "sca.affiliate.data.js" | asset_url }}'></script>
+<script src='{{ 'sca.affiliate.data.js' | asset_url }}' async></script>
+</head>
+
+  <body   class="template-{{ template }} {{ page.handle }} {%if product %} pro_{{ product.handle }}{% endif %}">
+
+    {% comment %} GS JS object for recharge {% endcomment %}
+
+    <script>
+      Shopify.productIdSubscription = [];
+
+      Shopify.rechargeSubscriptionsCopy = {
+        oneTimeBuy: "{{ settings.one-time }}",
+        subscription: "{{ settings.subscription-gen  }}",
+        month: "{{ settings.subscription-1 }}",
+        monthDesc: "{{ settings.subscription-1-desc }}",
+        quarter: "{{ settings.subscription-2 }}",
+        quarterDesc: "{{  settings.subscription-2-desc }}"
+      }
+    </script>
+
+     {% comment %} GS JS object for recharge {% endcomment %}
+
+{% comment %}
+  Accouncement bar installed by Builder.io
+  You may modify this code at any time
+{% endcomment %}
+{% include 'model.announcement-bar.builder' %}
+
+
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+      {{ "accessibility.skip_to_text" | t }}
+    </a>
+<div class="topbar">
+  <div class="topbar-detail">
+    <div class="topbar-form">
+    <p>Looks like you’re in </p>
+<!--  <select id="sel_country">
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+  <option value="canada">Canada</option>
+  </select> -->
+  {% form 'currency' %}
+    <select name="currency">
+      {% for currency in shop.enabled_currencies %}
+        {% if currency == cart.currency %}
+          <option selected="true" value="{{currency.iso_code}}">{% if currency.iso_code == 'GBP'%}UK{%elsif currency.iso_code == 'USD'%}USA{%else%}Ireland{%endif%} </option>
+          {% else %}
+          <option value="{{currency.iso_code}}">{% if currency.iso_code == 'GBP'%}UK{%elsif currency.iso_code == 'USD'%}USA{%else%}Ireland{%endif%} </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  {% endform %}
+    </div>
+    <a href="#" class="topbar-continue">CONTINUE</a>
+    <div class="topbar-mobile-icon">
+      <a href="#" class="topbar-click"></a>
+      <a href="#" class="topbar-close"></a>
+    </div>
+  </div>
+    </div>
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    <main id="MainContent" class="content-for-layout focus-none antiCls" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+
+
+  <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+    </ul>
+
+    <script>
+      var cls = document.getElementsByClassName('antiCls'),
+      i = cls.length;
+      console.log(cls.length);
+    
+      for (i = 0; i < cls.length; i++) {
+          cls[i].style.visibility = "visible";
+      } 
+
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}'
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`
+      }
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+      }
+    </script>
+
+    <script defer src="{{ 'slider.js' | asset_url }}"></script>
+    <script defer src="{{ 'variants.js' | asset_url }}"></script>
+    <script src="{{ 'api.jquery.js' | shopify_asset_url }}"></script>
+
+
+    {% comment %} GS Script to trigger recharge subscription {% endcomment %}
+    <script defer src="{{ 'gs-recharge_extension.js' | asset_url }}"></script>
+
+   
+<!-- Stamped - Begin script -->
+<script async data-api-key="pubkey-HC637n2Iw9SXM79mU1mb996hsBQU88" id="stamped-script-widget" src="https://cdn1.stamped.io/files/widget.min.js" type="text/javascript"></script>
+<!-- Stamped - End script -->
+ 
+    
+    {% include 'subscription-theme-footer' %}
+
+    
+
+ <script>
+  $(function(){
+    $(document).on('click', '.product-form__submit', function(e) {
+      $('body').addClass('select_body');
+    });
+
+
+  });
+  $(document).mouseup(function(e){
+    var container = $(".product-form__submit");
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+      $('body').removeClass('select_body');
+
+    }
+  });
+</script>
+
+<script>
+  function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+  function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 49) {
+      $('.cart-notification').addClass('scrolledd');
+    } else {
+      $('.cart-notification').removeClass('scrolledd');
+    }
+  });
+
+
+$.get("https://ipinfo.io/json", function (response) {
+  if(!getCookie('current_currency')){
+  if(response.country == "GB"){
+    $(".shopify-currency-form select").val('GBP').trigger('change');
+  }else if(response.country == "IE"){
+   $(".shopify-currency-form select").val('EUR').trigger('change');
+  }else {
+    $(".shopify-currency-form select").val('USD').trigger('change');
+  }
+    setCookie("current_currency", $(".shopify-currency-form select option:selected").val(), 30);
+  }
+  }, "jsonp");
+
+/* $("select#sel_country").change(function(){
+    if($(this).val() == 'uk'){
+    $(".shopify-currency-form select").val('GBP').trigger('change');
+    }else if($(this).val() == 'usa'){
+    $(".shopify-currency-form select").val('USD').trigger('change');
+    }else{
+    $(".shopify-currency-form select").val('EUR').trigger('change');
+    }
+    Cookies.set('current_currency', $(".shopify-currency-form select option:selected").val());
+  });*/
+
+        function currencyFormSubmit(event) {
+    event.target.form.submit();
+  }
+
+  document.querySelectorAll('.shopify-currency-form select').forEach(function(element) {
+    element.addEventListener('change', currencyFormSubmit);
+  });
+  $('body').on('change', '.quantity__input', function(){
+    $(this).parent().find(".selected_option span").html($(this).val()*30);
+    if($(this).val() > 1){ $(this).parent().find(".selected_option").html($(this).parent().find(".selected_option").html().replace('Jar (', 'Jars (')); }
+    else{$(this).parent().find(".selected_option").html($(this).parent().find(".selected_option").html().replace('Jars (', 'Jar ('));}
+    setTimeout(function(){
+    jQuery.getJSON('/cart.js', function(cart) {
+      if(cart.item_count < 1){
+  $("#cart-notification").removeClass('active');
+      }
+});
+    },1000);
+
+  });
+</script>
+
+    <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1200, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+
+</script>
+
+    <style>
+ .template-product .header.header--middle-left.header--has-menu {
+   background: {{ product.metafields.my_fields.header_background_color }};
+	}
+
+       .topbar {
+	background: {{ product.metafields.my_fields.topbar_background_color }} !important;
+}
+ .announcement-bar.color-accent-2 {
+	background: {{ product.metafields.my_fields.announcement_background_color }} !important;
+}
+</style>
+    
+   
+<!-- Stamped - Begin script -->
+<script async data-api-key="pubkey-HC637n2Iw9SXM79mU1mb996hsBQU88" id="stamped-script-widget" src="https://cdn1.stamped.io/files/widget.min.js" type="text/javascript"></script>
+<!-- Stamped - End script -->
+ 
+    
+</body>
+</html>
+
+

@@ -1,0 +1,118 @@
+<div class="home-product-section antiCls">
+  {% if section.settings.heading != blank %}
+  <div class="home-product-header">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+  {% endif %}
+  <div class="grid grid--3-col-desktop">
+  <div class="grid__item">
+    {% assign product1 = all_products[ section.settings.product-1 ] %}
+    {% assign prohandle1_2 = section.settings.product-1 | append: '-annually' %}
+    {% assign product1_2 = all_products[prohandle1_2] %}  
+   {% render 'product-grid-subscription', product3: product1, product3_2: product1_2, blockid: 1  %}     
+    </div>
+    
+    <div class="grid__item">
+    {% assign product2 = all_products[ section.settings.product-2 ] %}
+    {% assign prohandle2_2 = section.settings.product-2 | append: '-annually' %}
+    {% assign product2_2 = all_products[prohandle2_2] %}       
+ {% render 'product-grid-subscription', product3: product2, product3_2: product2_2, blockid: 2   %} 
+    </div>
+    
+    <div class="grid__item">
+    {% assign product3 = all_products[ section.settings.product-3 ] %}     
+    {% assign prohandle3_2 = section.settings.product-3 | append: '-annually' %}
+    {% assign product3_2 = all_products[prohandle3_2] %}       
+      {% render 'product-grid-subscription', product3: product3, product3_2: product3_2, blockid: 3   %}      
+  </div>
+</div>
+<script>
+
+     var vrnt = $(this).parents('form').find(".select__select option[data-title='one time']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');  
+  
+  $(".grid_rc_container > ul > li > .grid_rc_opt").mouseup(function(e){
+    var container = $(".grid_rc_container > ul > li > .grid_rc_opt input");
+ console.log('here567');
+    // If the target of the click isn't the container
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+    $(this).find('input[type="radio"]').click();
+    }
+});
+  $(".delivery-days > li").mouseup(function(e){
+    var container = $(".delivery-days > li input");
+ console.log('here567');
+    // If the target of the click isn't the container
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+    $(this).find('input[type="radio"]').click();
+    }
+});  
+  
+  $('.grid_rc_container input[type="radio"]').change(function(event){
+    console.log($(this).val());
+    var val = $(this).val();
+    if(val == 'subscribe'){
+    $(this).parents('form').find('.selling_plan').attr('name','selling_plan');
+      $(this).parents('form').find(".deliverytext").show();
+     var vrnt = $(this).parents('form').find(".select__select option[data-title='Monthly Save 10%']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');      
+    }else if(val == 'one time'){
+    $(this).parents('form').find('.selling_plan').attr('name',''); 
+      $(this).parents('form').find(".deliverytext").hide();
+     var vrnt = $(this).parents('form').find(".select__select option[data-title='one time']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');    
+    }
+  });
+  
+  $('body').on("change", ".home-product-section .selling_plandays", function(){
+     var plannm = $(this).data('plan-option');
+    var vrnt = $(this).parents('form').find(".select__select option[data-title='"+plannm+"']").val();
+  $(this).parents('form').find(".select__select").val(vrnt).trigger('change');
+    var daysoption =  $(this).parents('form').find("#selling_plan option:selected").data('plan-option');
+  $(this).parents('form').find(".selling_plan").val($(this).val()).trigger('change');
+    
+    //QQ  $('.product__info-container input[value="'+plannm+'"]').click();
+  });  
+</script>
+
+{% schema %}
+  {
+    "name": "Home Products Section",
+    "settings": [
+{
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+{
+      "type": "product",
+      "id": "product-1",
+      "label": "Product 1"
+    },
+{
+      "type": "product",
+      "id": "product-2",
+      "label": "Product 2"
+    },
+{
+      "type": "product",
+      "id": "product-3",
+      "label": "Product 3"
+    }
+
+
+],
+  "presets": [
+    {
+      "name": "Home Products Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,86 @@
+<div class="product-testimonial-section">
+{% if section.settings.title != blank %}
+  <div class="home-product-header">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+  {% endif %}
+  
+  <div class="product-testimonial-slider">
+   {% for block in section.blocks %}
+     <div >
+       <div class="product-testimonial-block">
+           <div class="product-testimonial-block-inner">
+         {% if block.settings.image != blank %}<img alt="" src="{{ block.settings.image | img_url: 'master' }}">{% endif %}
+         {% if block.settings.content != blank %}<p>{{ block.settings.content }}</p>{% endif %}
+         {% if block.settings.author != blank %}<h3>{{ block.settings.author }}</h3>{% endif %}
+       </div>
+       </div>
+    </div>
+     {% endfor %}
+  </div>
+  
+</div>
+
+
+<script>
+  $(document).ready(function(){
+      $('.product-testimonial-slider').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+   
+    });
+  
+</script>
+{% schema %}
+  {
+    "name": "Product Testimonial",
+    "settings": [
+
+{
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        
+
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+
+{
+        "type": "text",
+        "id": "content",
+        "label": "Content"
+      },
+{
+        "type": "text",
+        "id": "author",
+        "label": "author"
+      }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Testimonial",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

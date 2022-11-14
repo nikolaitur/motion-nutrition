@@ -1,0 +1,109 @@
+
+   <div class="hps-block hps-block-{{blockid}}" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product">
+      <a href="{{ product3.url }}" class="hps-block-image antiCls">
+      <img alt="{{ product3.title | escape }}" src="{{ product3.featured_image | product_img_url: 'master' }}">
+      </a>
+      <div class="hps-block-detail">
+        <h3><a href="{{ product3.url }}" >{{ product3.title }}</a></h3>
+       <product-form class="product-form">     
+        <form method="post" action="/cart/add">
+        <select name="id"  class="select__select" style="display:none">
+        {%- for variant in product3.variants -%}
+         <option
+         {% if variant == product3.selected_or_first_available_variant %}selected="selected"{% endif %}
+         {% if variant.available == false %}disabled{% endif %}
+         value="{{ variant.id }}" data-title="{{ variant.title }}"
+          >{{ variant.title }}</option>
+          {%- endfor -%}
+          
+          {% if product3_2.variants[0].available %}
+          <option
+         {% if product3_2.variants[0].available == false %}disabled{% endif %}
+         value="{{ product3_2.variants[0].id }}" data-title="{{ product3_2.variants[0].title }}"
+          >{{ product3_2.variants[0].title }}</option>   
+          {% endif %}
+          </select>
+          
+   {% if product3.selling_plan_groups[0].selling_plans[0].id %}        
+   
+ {% assign dis_type = product3.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value_type %}
+ {% assign dis_value = product3.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value %}
+     
+ {% if dis_type == 'percentage' %}
+  {% assign dissave = dis_value | append: '%' %}
+  {% assign wholesale-5 = product3.price | divided_by: 100 | times: dis_value | plus: dis_value  %}
+       
+ {% assign dis_price =  product3.price | minus: wholesale-5 | money %}         
+ {% else %}
+ {% assign dissave = dis_value | money %}  
+ {% assign dis_price =  product3.price | minus: dis_value | money %}          
+ {% endif %}         
+ {% assign dis_type =  %}         
+<div class="grid_rc_container ">
+  <ul>
+  <li>
+   <div class="grid_rc_opt">   
+    <label><input class name="selling_plan_{{product3.selling_plan_groups[0].selling_plans[0].id}}" type="radio" oninput="this.className = ''" value="one time" checked><span></span></label> One-time purchase <h5>{{product3.variants[0].price | money }}</h5></li>
+    </li>
+ <li>
+    <div class="rc_inner grid_rc_opt">  
+   <label><input name="selling_plan_{{product3.selling_plan_groups[0].selling_plans[0].id}}" type="radio" oninput="this.className = ''" value="subscribe"><span></span></label> Subscribe & save ↺ <h5>{{dis_price}}</h5>
+   </div>
+   {% assign sellplan2 = product3_2.selling_plan_groups[0].selling_plans[0] %}
+   <div class="deliverytext"> 
+           {% assign optionsarr = product3.selling_plan_groups[0].selling_plans %}
+{% if optionsarr.size > 1 %}
+  <div data-v-61d2e742="" data-plans-container="" class="rc-selling-plans rc_widget__option__plans" style="display: block;"><label data-v-61d2e742="" for="selling_plan" data-plans-label="" class="rc-selling-plans__label visually-hidden">
+    Delivery
+  </label>        
+   <select data-v-61d2e742="" id="selling_plan" name="" data-plans-dropdown="" class="selling_plan" style="display:none;" >
+ {% for opt in optionsarr %} 
+     <option data-v-61d2e742="" data-plan-option="{{opt.name}}" value="{{opt.id}}">
+      {{opt.name}}
+    </option>
+     {% endfor %}
+     {% if sellplan2 %}
+    <option data-v-61d2e742="" data-plan-option="{{sellplan2.name}}" value="{{sellplan2.id}}">
+      {{sellplan2.name}}
+    </option>   
+  {% endif %}   
+   </select> 
+        </div>       
+     <ul class="delivery-days" >
+     {% for opt in optionsarr %}   
+        {% if forloop.index==1 %} 
+        {% assign optname = "Monthly <span >Save 10%</span>" %}      
+        {% elsif forloop.index==2  %} 
+        {% assign optname = "Quarterly Ships Free + Save 20%" %}          
+        {% elsif forloop.index==3  %}    
+       {% assign optname = "Annually Ships Free + Save 33%" %}  
+        {% endif %}       
+        <li><label><input {% if forloop.index==1 %} checked {% endif %} type="radio"  class="selling_plandays {% if forloop.index==1 %} selling_plandaysfirst {% endif %}" value="{{opt.id}}"  data-plan-option="{{optname}}" data-days="yes" name="selling_plandays"><div></div></label>{{optname}}</li>
+     {% endfor %}
+           {% if sellplan2 %}
+        {% assign optname = "Annually Ship Free + Save 33%" %}  
+         <li><label><input type="radio"  class="selling_plandays " value="{{sellplan2.id}}"  data-plan-option="{{optname}}" data-days="yes" name="selling_plandays"><div></div></label>{{optname}}</li>
+          {% endif %}
+        </ul>             
+        {% else %}
+    
+  <input class="selling_plan" type="hidden" name="" value="{{product3.selling_plan_groups[0].selling_plans[0].id}}" />  
+       
+ {% endif %}  
+      
+      </div>
+    
+    </li>
+  </ul>
+  
+    </div>
+  {% endif %}           
+          
+  <input type="submit" value="Add to basket" class="btn btn-white" />
+</form>
+        </product-form>
+      </div>
+    </div>
+     
+ 
+  

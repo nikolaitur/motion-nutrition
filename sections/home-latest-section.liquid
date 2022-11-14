@@ -1,0 +1,79 @@
+<div class="latest-from-mn-section">
+  <div class="cloud-1 d-none d-lg-block">
+    <div class="image-wrap">
+      <img alt="Cloud" src="https://cdn.shopify.com/s/files/1/0565/0854/7226/files/cloud-left-1.svg?v=1627302980">
+    </div>
+  </div>
+  <div class="cloud-2 d-none d-lg-block">
+    <div class="image-wrap">
+      <img alt="Clouds" src="https://cdn.shopify.com/s/files/1/0565/0854/7226/files/cloud-2.svg?v=1627303105">
+    </div>
+  </div>
+  <div class="centered-section">
+    <div class="page-width">
+      <div class="grid grid--2-col-desktop">
+        <div class="grid__item">
+          <div class="latest-detail">
+           {% if section.settings.tag != blank %}<h4 >{{ section.settings.tag }}</h4>{% endif %}
+           {% if section.settings.title != blank %}<h2 >{{ section.settings.title }}</h2>{% endif %}
+          {% if section.settings.content != blank %}<p>{{ section.settings.content }}</p>{% endif %}
+             {% if section.settings.btn-link != blank %}<a href="{{ section.settings.btn-link }}" class="btn btn-white">{{ section.settings.btn-title }}</a>{% endif %}
+         </div>
+        </div>
+        <div class="grid__item latest-from-mn__col-image">
+          <div class="image-wrap position-relative">
+			 {% if section.settings.image != blank %}<img alt="" src="{{ section.settings.image | img_url: 'master' }}">{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Home Latest Section",
+    "settings": [
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+{
+        "type": "text",
+        "id": "tag",
+        "label": "Tag"
+      },
+{
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+{
+        "type": "html",
+        "id": "content",
+        "label": "Content"
+      },
+{
+      "type": "text",
+      "id": "btn-title",
+      "label": "Btn Title"
+    },
+{
+      "type": "url",
+      "id": "btn-link",
+      "label": "Btn Link"
+    }
+],
+  "presets": [
+    {
+      "name": "Home Latest Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

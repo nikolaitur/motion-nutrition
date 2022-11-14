@@ -1,0 +1,331 @@
+{
+  "sections": {
+    "1627029181392af90e": {
+      "type": "home-top-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Unplug.png",
+        "title": "There's a better way to sleep",
+        "content": "Less in the head and more time in the bed. Meet Unplug — the plant-powered formula that's putting bad sleep to bed.",
+        "btn-title": "GET SLEEPY",
+        "btn-link": "shopify:\/\/products\/unplug",
+        "review-text": "<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/0854\/7226\/files\/Bitmap.svg?v=1627028507\"><br> 4.5\/5 on Trustpilot <a href=\"http:\/\/trustpilot.com\/review\/motionnutrition.com\">Read reviews<\/a>"
+      }
+    },
+    "162703919557b43c86": {
+      "type": "home-tabs-section",
+      "disabled": true,
+      "settings": {
+        "recent-product-1": "power-up",
+        "recent-product-2": "hormone-balance",
+        "image": "shopify:\/\/shop_images\/Bitmap.png",
+        "title": "Hormone Balance: our mighty stress shield",
+        "btn-title": "Read again",
+        "btn-link": "shopify:\/\/blogs\/blog\/heres-what-happens-after-you-go-off-unplug",
+        "recommended-product-1": "high-intensity-training-beta-alanine",
+        "recommended-product-2": "brain-body-creatine",
+        "recommended-product-3": "mid-workout-hydration"
+      }
+    },
+    "16272849098b3abdaf": {
+      "type": "home-products-section",
+      "settings": {
+        "heading": "",
+        "product-1": "unplug",
+        "product-2": "power-up",
+        "product-3": "hormone-balance"
+      }
+    },
+    "16272879103e73811b": {
+      "type": "image-with-text",
+      "blocks": {
+        "eb0a46f6-190e-41e1-9e3a-748a6fc13be8": {
+          "type": "tag",
+          "settings": {
+            "tag": "👋 WE'RE MOTION"
+          }
+        },
+        "16272879103e73811b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "We make simple, natural things that just work"
+          }
+        },
+        "16272879103e73811b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You're here! You won’t believe this, but we’ve been looking for you  since 2015.<\/p><p>We already knew that you were vegan\/non-vegan and prefer dogs\/cats over cats\/dogs. We also knew that you like simple, natural things with <em>uncompromising<\/em> quality that just work.<\/p><p>That’s exactly what we’ve been making over the last 6 years. We just didn’t know where you were. <\/p><p>Well, you’re here now. Welcome home.<\/p>"
+          }
+        },
+        "16272879103e73811b-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "THINGS WE'VE MADE FOR YOU",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "eb0a46f6-190e-41e1-9e3a-748a6fc13be8",
+        "16272879103e73811b-0",
+        "16272879103e73811b-1",
+        "16272879103e73811b-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/3A7B20D7-CAC5-4C8E-8AE3-6A320F12BB78_1_105_c.jpg",
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "layout": "image_first"
+      }
+    },
+    "16272931682fcc24c1": {
+      "type": "home-timeline-section",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Illustration.png",
+        "heading": "Changing your life doesn’t happen overnight.",
+        "title-1": "DAY 1",
+        "content-1": "Lorem ipsum dolor amet, consectetuer adipiscing elit, sed diam nonummy.",
+        "title-2": "DAY 7",
+        "content-2": "Lorem ipsum dolor amet, consectetuer adipiscing elit, sed diam nonummy.",
+        "title-3": "DAY 20",
+        "content-3": "Lorem ipsum dolor amet, consectetuer adipiscing elit, sed diam nonummy.",
+        "title-4": "DAY 30",
+        "content-4": "Lorem ipsum dolor amet, consectetuer adipiscing elit, sed diam nonummy.",
+        "circle-text": "FEEL BETTER!"
+      }
+    },
+    "1627298934e3c7277f": {
+      "type": "home-score-section",
+      "disabled": true,
+      "settings": {
+        "heading": "What’s your sleep score?",
+        "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+      }
+    },
+    "1627307400fb873cce": {
+      "type": "featured-blog",
+      "disabled": true,
+      "blocks": {
+        "1627307400fb873cce-0": {
+          "type": "title",
+          "settings": {
+            "show_date": true,
+            "show_author": false
+          }
+        },
+        "1627307400fb873cce-1": {
+          "type": "summary",
+          "settings": {
+          }
+        },
+        "1627307400fb873cce-2": {
+          "type": "link",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1627307400fb873cce-0",
+        "1627307400fb873cce-1",
+        "1627307400fb873cce-2"
+      ],
+      "settings": {
+        "heading": "Sometimes, we write amazing how-tos",
+        "blog": "energy",
+        "post_limit": 6,
+        "show_view_all": false,
+        "show_image": true,
+        "soft_background": false
+      }
+    },
+    "16273047657842685a": {
+      "type": "home-review-section",
+      "disabled": true,
+      "blocks": {
+        "d0bb9c48-952d-4a01-91b7-49c43f19e07b": {
+          "type": "review",
+          "settings": {
+            "content": "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet”",
+            "author-name": "Sammy Newbold"
+          }
+        },
+        "b2c7b1ba-02d7-416f-b660-f6d2067ed9fc": {
+          "type": "review",
+          "settings": {
+            "content": "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet”",
+            "author-name": "Sammy Newbold"
+          }
+        },
+        "e1524d35-7352-4e20-9898-10893a76f67f": {
+          "type": "review",
+          "settings": {
+            "content": "“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet”",
+            "author-name": "Sammy Newbold"
+          }
+        }
+      },
+      "block_order": [
+        "d0bb9c48-952d-4a01-91b7-49c43f19e07b",
+        "b2c7b1ba-02d7-416f-b660-f6d2067ed9fc",
+        "e1524d35-7352-4e20-9898-10893a76f67f"
+      ],
+      "settings": {
+        "title": "Don’t just take<br>our word for it…"
+      }
+    },
+    "16311904590b4d8b26": {
+      "type": "home-blog-posts",
+      "blocks": {
+        "d885dca7-9b21-48a1-ada4-0680e19c6a31": {
+          "type": "post",
+          "settings": {
+            "post": "sleep\/screens-sabotage-sleep"
+          }
+        },
+        "74f934e5-ffee-446d-bf8c-005c30e489dd": {
+          "type": "post",
+          "settings": {
+            "post": "sleep\/fall-back-asleep"
+          }
+        },
+        "9620809f-0d19-4fe5-aeea-c4283f3fecac": {
+          "type": "post",
+          "settings": {
+            "post": "sleep\/5-reasons-i-ditched-my-whoop-band"
+          }
+        },
+        "6d823314-f822-475f-83ae-39bdbfbd76a8": {
+          "type": "post",
+          "settings": {
+            "post": "sleep\/alcohol-and-a-good-nights-sleep-dont-mix"
+          }
+        },
+        "f4fbf22b-70a5-4761-9703-bfd5ae793068": {
+          "type": "post",
+          "settings": {
+            "post": "sleep\/heres-what-happens-after-you-go-off-unplug"
+          }
+        }
+      },
+      "block_order": [
+        "d885dca7-9b21-48a1-ada4-0680e19c6a31",
+        "74f934e5-ffee-446d-bf8c-005c30e489dd",
+        "9620809f-0d19-4fe5-aeea-c4283f3fecac",
+        "6d823314-f822-475f-83ae-39bdbfbd76a8",
+        "f4fbf22b-70a5-4761-9703-bfd5ae793068"
+      ],
+      "settings": {
+        "heading": "Sometimes, we write amazing how-tos"
+      }
+    },
+    "16273033876a756c5c": {
+      "type": "home-latest-section",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MN_-_Snowman-2.png",
+        "tag": "OTHER TIMES...",
+        "title": "We ship good vibes on IG",
+        "content": "<script src=\"https:\/\/apps.elfsight.com\/p\/platform.js\" defer><\/script>\n<div class=\"elfsight-app-3f30f2e6-9a18-42b0-ac86-10bf080962aa\"><\/div>",
+        "btn-title": "FOLLOW US",
+        "btn-link": "shopify:\/\/collections"
+      }
+    },
+    "1627307038264f5a4b": {
+      "type": "home-community-section",
+      "blocks": {
+        "3dbc450a-f36c-4de3-a43b-a17d1c1c0f7a": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-1.jpg"
+          }
+        },
+        "5bfb2d87-daf3-4339-85f3-68f5c6dccf55": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-2.jpg"
+          }
+        },
+        "dc405d82-dee9-41de-a46f-3c8de7c7bc3c": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-3.jpg"
+          }
+        },
+        "a9b701cc-ff1b-4d35-882d-2818f5e7f272": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-4.jpg"
+          }
+        },
+        "fe5d9a20-6d13-466d-8925-dc4ca84151b0": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-5.jpg"
+          }
+        },
+        "3455e4b0-38b6-44b0-8ea2-ccd81a5e3bef": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-6.jpg"
+          }
+        },
+        "2eed6840-70f4-4798-9aa6-185643867fe6": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-7.jpg"
+          }
+        },
+        "6d2fd0ed-c664-46a4-a178-a8e3adac953f": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-8.jpg"
+          }
+        },
+        "2e67f13d-f496-440f-8d36-819bea52ed9f": {
+          "type": "community",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/c-9.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "3dbc450a-f36c-4de3-a43b-a17d1c1c0f7a",
+        "5bfb2d87-daf3-4339-85f3-68f5c6dccf55",
+        "dc405d82-dee9-41de-a46f-3c8de7c7bc3c",
+        "a9b701cc-ff1b-4d35-882d-2818f5e7f272",
+        "fe5d9a20-6d13-466d-8925-dc4ca84151b0",
+        "3455e4b0-38b6-44b0-8ea2-ccd81a5e3bef",
+        "2eed6840-70f4-4798-9aa6-185643867fe6",
+        "6d2fd0ed-c664-46a4-a178-a8e3adac953f",
+        "2e67f13d-f496-440f-8d36-819bea52ed9f"
+      ],
+      "settings": {
+        "tag": "OTHER TIMES...",
+        "title": "We ship good vibes on IG",
+        "content": "<img loading=\"lazy\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/0854\/7226\/files\/power_up_girl_confetti-2.png?v=1631553173\" alt=\"Good vibes on IG\">"
+      }
+    }
+  },
+  "order": [
+    "1627029181392af90e",
+    "162703919557b43c86",
+    "16272849098b3abdaf",
+    "16272879103e73811b",
+    "16272931682fcc24c1",
+    "1627298934e3c7277f",
+    "1627307400fb873cce",
+    "16273047657842685a",
+    "16311904590b4d8b26",
+    "16273033876a756c5c",
+    "1627307038264f5a4b"
+  ]
+}

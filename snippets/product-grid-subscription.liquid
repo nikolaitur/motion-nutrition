@@ -1,0 +1,88 @@
+<script>
+  Shopify.rechargeSubscriptions = {
+    defaultPrice: '{{ product3.variants[0].price | money }}',
+    subscriptionPrice: '{{ product3.variants[1].price | money  }}',
+    subscriptionQuarterlyPrice: '{{ product3.variants[2].price | money  }}',
+    subscriptionAnuallyPrice: '{{ product3.variants[3].price | money  }}',
+  };
+</script>
+
+<div
+  class="hps-block hps-block-{{blockid}}"
+  id="ProductSection-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-productid="{{ product3.id }}"
+  data-section-type="product"
+>
+  <a href="{{ product3.url }}" class="hps-block-image antiCls">
+    <img
+      alt="{{ product3.title | escape }}"
+      loading="lazy"
+      src="{{ product3.featured_image | product_img_url: 'master' }}"
+    >
+  </a>
+
+  <div class="hps-block-detail">
+    <h3>
+      <a href="{{ product3.url }}">{{ product3.title }}</a>
+    </h3>
+    <product-form class="product-form">
+      <form method="post" action="/cart/add">
+        <recharge-small>
+          <select name="id" type="hidden" class="select__select variant-selector" style="display:none">
+            {%- for variant in product3.variants -%}
+              <option
+                {% if variant == product3.selected_or_first_available_variant %}
+                  selected="selected"
+                {% endif %}
+                {% if variant.available == false %}
+                  disabled
+                {% endif %}
+                value="{{ variant.id }}"
+                data-title="{{ variant.title }}"
+              >
+                {{ variant.title }}
+              </option>
+            {%- endfor -%}
+
+            {% if product3_2.variants[0].available %}
+              <option
+                {% if product3_2.variants[0].available == false %}
+                  disabled
+                {% endif %}
+                value="{{ product3_2.variants[0].id }}"
+                data-title="{{ product3_2.variants[0].title }}"
+              >
+                {{ product3_2.variants[0].title }}
+              </option>
+            {% endif %}
+          </select>
+
+          <div class="rc-custom-injection-point-{{ product3.id }}"></div>
+
+          <div class="gs-custom__recharge gs-thumb__recharge"></div>
+
+          <input type="submit" value="Add to basket" class="btn btn-white">
+        </recharge-small>
+      </form>
+    </product-form>
+  </div>
+</div>
+
+<script>
+  ( () => {
+
+    const productId = {{ product3.id }};
+    Shopify.productIdSubscription.push(productId);
+
+    /*
+    setTimeout(() => {
+      window.ReChargeWidget.createWidget({
+            productId: 6766787690650,
+            injectionParent: `.rc-custom-injection-point`,
+      })
+    }, 2300 )
+    */
+
+  })()
+</script>

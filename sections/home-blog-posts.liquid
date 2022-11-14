@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-article-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-featured-blog.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-article-card.css' | asset_url | stylesheet_tag }}</noscript>
+
+{{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}
+
+<div class="blog{% if section.settings.soft_background %} background-secondary{% endif %}{% if section.settings.heading == blank %} no-heading{% endif %}">
+ <div class="page-width">
+   <div class="home-blog-main">
+    <div class="title-wrapper-with-link{% if section.settings.heading == blank %} title-wrapper-with-link--no-heading{% endif %} title-wrapper--self-padded-tablet-down">
+      <h2 class="blog__title">{{ section.settings.heading | escape }}</h2>
+
+      
+    </div>
+   <ul id="Slider-{{ section.id }}"
+          class="blog__posts articles-wrapper grid grid--peek grid--2-col-tablet grid--3-col-desktop slider {% if posts_exceed_limit %} blog__posts--{{ section.settings.post_limit }}-items{% else %} blog__posts--{{ section.settings.blog.articles_count }}-items{% endif %}"
+          role="list"
+        >
+           {% for block in section.blocks %}
+            <li class="blog__post grid__item article slider__slide slider__slide--full-width">
+              {% assign bloghandle = block.settings.post | split: "/" | first %}
+              {% assign blogtitle = blogs[bloghandle].title %}
+              
+            {% assign article = articles[ block.settings.post ] %}
+              
+              <article class="article-card" >
+  <a href="{{ article.url }}" class="article-content motion-reduce" tabindex="0">
+  <div class="article-card__image-wrapper">
+        <div class="article-card__image media media--landscape">
+          <img alt="" class="motion-reduce" loading="lazy" src="{{ article.image.src | img_url: '450x' }}">
+        </div>
+      </div>
+	  <div class="article-card__info">
+      <span class="article-card-tag">
+	  <h4>{{ blogtitle }}</h4>
+	  </span>
+	  <header class="article-card__header">
+              <h2 class="article-card__title" >
+               {{ article.title }}
+              </h2>
+			  </header>
+			  </div>
+  </a>
+</article>
+            </li>
+           {% endfor %}
+</ul>
+ </div>
+</div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    if( $(window).width() > 767 ){
+      $('.blog__posts').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
+    }else if( $(window).width() > 480 ){   
+         $('.blog__posts').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 2,
+        slidesToScroll: 1
+      });    
+    }else{
+       $('.blog__posts').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });   
+    }
+    });
+  
+</script>
+
+
+
+{% schema %}
+  {
+    "name": "Home Blog Post",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title"
+    }
+
+
+  ],    
+"blocks": [
+    {
+      "type": "post",
+      "name": "Post",
+      "settings": [
+ 
+{
+        "type": "article",
+        "id": "post",
+        "label": "Article"
+      }
+        
+      ]
+    }
+  ],
+"presets": [
+    {
+      "name": "Home Blog Post",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

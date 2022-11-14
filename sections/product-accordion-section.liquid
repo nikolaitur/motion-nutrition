@@ -1,0 +1,229 @@
+{%- assign _section = section.settings -%}
+
+{%- if _section.show_first_accordion and product.metafields.accordion-2.title or
+    _section.show_second_accordion and product.metafields.accordion-1.title -%}
+  <div class="product-accordion-section" id="{{ section.id }}">
+    <div class="page-width">
+      <div class="product-accordion-main">
+        {%- if product.metafields.accordion-2.title != blank -%}
+          <div class="product-accordion-block">
+            <button class="accordion active">{{ product.metafields.accordion-2.title }}</button>
+            <div class="panel" style="display: block;">
+              <div class="power-table-main">
+                <table >
+                  <tr>
+                    <th ></th>
+                    {% if product.metafields.my_fields.power_table_heading_ != blank %}<th >{{ product.metafields.my_fields.power_table_heading_ }}</th>{% endif %}
+                    {% if product.metafields.my_fields.power_table_heading_2 != blank %}<th>{{ product.metafields.my_fields.power_table_heading_2 }}</th>{% endif %}
+                  </tr>
+                  {% if product.metafields.power.table_row_1_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.power.table_row_1_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_1_value_2 != blank %}{{ product.metafields.power.table_row_1_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_1_value_3 != blank %}{{ product.metafields.power.table_row_1_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                  {% if product.metafields.power.table_row_2_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.power.table_row_2_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_2_value_2 != blank %}{{ product.metafields.power.table_row_2_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_2_value_3 != blank %}{{ product.metafields.power.table_row_2_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                  {% if product.metafields.power.table_row_3_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.power.table_row_3_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_3_value_2 != blank %}{{ product.metafields.power.table_row_3_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_3_value_3 != blank %}{{ product.metafields.power.table_row_3_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                  {% if product.metafields.my_fields.table_row_4_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.my_fields.table_row_4_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_4_value_2 != blank %}{{ product.metafields.power.table_row_4_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_4_value_3 != blank %}{{ product.metafields.power.table_row_4_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                  {% if product.metafields.power.table_row_5_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.power.table_row_5_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_5_value_2 != blank %}{{ product.metafields.power.table_row_5_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_5_value_3 != blank %}{{ product.metafields.power.table_row_5_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                  {% if product.metafields.power.table_row_6_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.power.table_row_6_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_6_value_2 != blank %}{{ product.metafields.power.table_row_6_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_6_value_3 != blank %}{{ product.metafields.power.table_row_6_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                  {% if product.metafields.power.table_row_7_value_1 != blank %}
+                    <tr>
+                      <td>{{ product.metafields.power.table_row_7_value_1 }}</td>
+                      <td class="{% if product.metafields.power.table_row_7_value_2 != blank %}{{ product.metafields.power.table_row_7_value_2 }}{% else %}false{% endif %}"></td>
+                      <td class="{% if product.metafields.power.table_row_7_value_3 != blank %}{{ product.metafields.power.table_row_7_value_3 }}{% else %}false{% endif %}"></td>
+                    </tr>
+                  {% endif %}
+                </table>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if _section.show_second_accordion and product.metafields.accordion-1.title != blank -%}
+          {%- if product.metafields.accordion.tab_title_1 and product.metafields.accordion.tab_content_1 or
+                 product.metafields.accordion.tab_title_2 and product.metafields.accordion.tab_content_2 or
+                 product.metafields.accordion.tab_title_3 and product.metafields.accordion.tab_content_3 or
+                 product.metafields.accordion.tab_title_4 and product.metafields.accordion.tab_content_4 or
+                 product.metafields.accordion.tab_title_5 and product.metafields.accordion.tab_content_5 or
+                 product.metafields.accordion.tab_title_6 and product.metafields.accordion.tab_content_6 or
+                 product.metafields.accordion.tab_title_7 and product.metafields.accordion.tab_content_7 or
+                 product.metafields.accordion.tab_title_8 and product.metafields.accordion.tab_content_8 or
+                 product.metafields.accordion.tab_title_9 and product.metafields.accordion.tab_content_9 or
+                 product.metafields.accordion.tab_title_10 and product.metafields.accordion.tab_content_10 or
+                 product.metafields.accordion.tab_title_11 and product.metafields.accordion.tab_content_11 or
+                 product.metafields.accordion.tab_title_12 and product.metafields.accordion.tab_content_12 or
+                 product.metafields.accordion.tab_title_13 and product.metafields.accordion.tab_content_13 or
+                 product.metafields.accordion.tab_title_14 and product.metafields.accordion.tab_content_14 or
+                 product.metafields.accordion.tab_title_15 and product.metafields.accordion.tab_content_15 or
+                 product.metafields.accordion.tab_title_16 and product.metafields.accordion.tab_content_16 or
+                 product.metafields.accordion.tab_title_17 and product.metafields.accordion.tab_content_17 or
+                 product.metafields.accordion.tab_title_18 and product.metafields.accordion.tab_content_18
+          -%}
+            <div class="product-accordion-block">
+              <button class="accordion">{{ product.metafields.accordion-1.title }}</button>
+              <div class="panel" >
+                <div class="grid grid--3-col-desktop">
+                  <div class="grid__item">
+                    <div class="accordion-1-list">
+                      <ul>
+                        {% if product.metafields.accordion.tab_title_1 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-1')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_1 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_2 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-2')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_2 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_3 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-3')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_3 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_4 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-4')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_4 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_5 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-5')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_5 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_11 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-11')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_11 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_12 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-12')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_12 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_13 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-13')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_13 }}</a></li>{% endif %}
+                        {% if product.metafields.accordion.tab_title_14 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-14')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_14 }}</a></li>{% endif %}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="grid__item">
+                    <div class="accordion-1-list">
+                     <ul>
+                       {% if product.metafields.accordion.tab_title_6 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-6')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_6 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_7 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-7')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_7 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_8 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-8')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_8 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_9 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-9')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_9 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_10 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-10')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_10 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_15 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-15')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_15 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_16 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-16')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_16 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_17 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-17')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_17 }}</a></li>{% endif %}
+                       {% if product.metafields.accordion.tab_title_18 != blank %}<li><a href="JavaScript:void(0)" class="tablinks" onclick="openCity(event, 'tab-18')" id="defaultOpen" >{{ product.metafields.accordion.tab_title_18 }}</a></li>{% endif %}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="grid__item">
+                    <div class="accordion-1-text">
+                      {% if product.metafields.accordion.tab_content_1 != blank %}<div id="tab-1" class="tabcontent">{{ product.metafields.accordion.tab_content_1 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_2 != blank %}<div id="tab-2" class="tabcontent">{{ product.metafields.accordion.tab_content_2 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_3 != blank %}<div id="tab-3" class="tabcontent">{{ product.metafields.accordion.tab_content_3 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_4 != blank %}<div id="tab-4" class="tabcontent">{{ product.metafields.accordion.tab_content_4 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_5 != blank %}<div id="tab-5" class="tabcontent">{{ product.metafields.accordion.tab_content_5 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_6 != blank %}<div id="tab-6" class="tabcontent">{{ product.metafields.accordion.tab_content_6 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_7 != blank %}<div id="tab-7" class="tabcontent">{{ product.metafields.accordion.tab_content_7 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_8 != blank %}<div id="tab-8" class="tabcontent">{{ product.metafields.accordion.tab_content_8 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_9 != blank %}<div id="tab-9" class="tabcontent">{{ product.metafields.accordion.tab_content_9 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_10 != blank %}<div id="tab-10" class="tabcontent">{{ product.metafields.accordion.tab_content_10 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_11 != blank %}<div id="tab-11" class="tabcontent">{{ product.metafields.accordion.tab_content_11 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_12 != blank %}<div id="tab-12" class="tabcontent">{{ product.metafields.accordion.tab_content_12 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_13 != blank %}<div id="tab-13" class="tabcontent">{{ product.metafields.accordion.tab_content_13 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_14 != blank %}<div id="tab-14" class="tabcontent">{{ product.metafields.accordion.tab_content_14 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_15 != blank %}<div id="tab-15" class="tabcontent">{{ product.metafields.accordion.tab_content_15 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_16 != blank %}<div id="tab-16" class="tabcontent">{{ product.metafields.accordion.tab_content_16 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_17 != blank %}<div id="tab-17" class="tabcontent">{{ product.metafields.accordion.tab_content_17 }}</div>{% endif %}
+                      {% if product.metafields.accordion.tab_content_18 != blank %}<div id="tab-18" class="tabcontent">{{ product.metafields.accordion.tab_content_18 }}</div>{% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<script>
+var acc = document.querySelectorAll("#{{ section.id }} .accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+//document.getElementById("defaultOpen").click();
+</script>
+
+{% schema %}
+  {
+    "name": "Product Accordion Section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_first_accordion",
+        "label": "Show the first accordion",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_second_accordion",
+        "label": "Show the second accordion",
+        "default": true
+      }
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Product Accordion Section",
+        "category": "Home Section"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

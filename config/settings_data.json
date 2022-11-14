@@ -1,0 +1,157 @@
+{
+  "current": {
+    "one-time": "One-time Purchase",
+    "subscription-gen": "Subscribe & Save",
+    "subscription-1": "Monthly - Save 15% + Free Shipping",
+    "subscription-1-desc": "↺ 1 Pack every 30 days. Cancel anytime",
+    "subscription-2": "Quarterly - Save 25% + Free Shipping",
+    "subscription-2-desc": "↺ 3 Packs every 90 days. Cancel anytime",
+    "meta-text": "Pack (<span>30<\/span> Days)",
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#140d38",
+    "colors_accent_2": "#ffa557",
+    "accent_icons": "text",
+    "social_twitter_link": "https:\/\/twitter.com\/motionnutrition",
+    "social_facebook_link": "https:\/\/www.facebook.com\/motionnutrition\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/motionnutrition\/",
+    "favicon": "shopify:\/\/shop_images\/Logo_hi_res.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Motion_logo-2.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_accent_color": "#6b69db",
+    "checkout_button_color": "#6b69db",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "text": "SLEEP BETTER\/WORSE THAN PEOPLE YOUR AGE? - FIND OUT in 3 MINS",
+              "color_scheme": "background-1",
+              "link": "http:\/\/sleep.motionnutrition.com\/ratemysleep"
+            }
+          },
+          "c6485e8e-d913-443d-bdca-d0f34848feea": {
+            "type": "announcement",
+            "settings": {
+              "text": "TRY FOR 30 DAYS RISK-FREE • 100% money-back guarantee",
+              "color_scheme": "accent-2",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0",
+          "c6485e8e-d913-443d-bdca-d0f34848feea"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/0854\/7226\/files\/Motion_Logo.svg?v=1627024055",
+          "mobile-logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/0854\/7226\/files\/mobile-logo.svg?v=1627485058",
+          "logo_width": 100,
+          "logo_position": "middle-left",
+          "menu": "main-menu",
+          "show_line_separator": false,
+          "enable_sticky_header": true,
+          "contact-text": "OUR STORY ✨",
+          "contact-link": "shopify:\/\/pages\/about",
+          "helptxt": "",
+          "help": "",
+          "settingztxt": "My Subscriptions",
+          "settingz": "https:\/\/motionnutrition.com\/tools\/recurring\/login\/",
+          "show-notifaction": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0"
+        ],
+        "settings": {
+          "logo-image": "shopify:\/\/shop_images\/footer-logo.png",
+          "color_scheme": "accent-1",
+          "newsletter_enable": true,
+          "newsletter_heading": "We also make nice, homey emails",
+          "show_social": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "payment_enable": false
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "1634835955de6d8ef5": {
+        "type": "shopify:\/\/apps\/xo-insert-code\/blocks\/insert-code-header\/72017b12-3679-442e-b23c-5c62460717f5",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "7612553728132747764": {
+        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/net-promoter-score-form-modal\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "disabled": true,
+        "settings": {
+          "email": "",
+          "name": "",
+          "title": "",
+          "message": "Enable advanced features and increase your monthly order limit to match your business's needs.",
+          "reason": "",
+          "thank_you": "",
+          "label_name": "",
+          "label_email": ""
+        }
+      },
+      "1575957009345749421": {
+        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/side-drawer\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "disabled": true,
+        "settings": {
+          "show_avatar": false,
+          "position": "left",
+          "text": "",
+          "title": "",
+          "link": "",
+          "link_text": "",
+          "background_color": "",
+          "style_color_button_text": "",
+          "style_color_star": "",
+          "style_color_text": "",
+          "style_color_link": "",
+          "review_ids": "",
+          "product_ids": "",
+          "category": "",
+          "product_brand": "",
+          "tags": "",
+          "min_rating": "none",
+          "fill_empty": false,
+          "random": false,
+          "with_photos": false
+        }
+      }
+    }
+  }
+}

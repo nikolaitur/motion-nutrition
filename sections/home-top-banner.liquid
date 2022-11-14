@@ -1,0 +1,80 @@
+<div class="home-top-banner">
+  <div class="page-width">
+  <div class="grid grid--2-col-desktop">
+    <div class="grid__item">
+    <div class="home-top-banner-detail antiCls">
+      {% if section.settings.title != blank %}<h2>{{ section.settings.title }}</h2>{% endif %}
+      {% if section.settings.content != blank %}<p>{{ section.settings.content }}</p>{% endif %}
+      {% if section.settings.btn-link != blank %}<a href="{{ section.settings.btn-link }}" class="btn btn-white">{{ section.settings.btn-title }}</a>{% endif %}
+
+     <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6ffb0d04a076446a9af" data-businessunit-id="57557f3d0000ff00058ef862" data-style-height="20px" data-style-width="100%" data-theme="light" data-text-color="#ffffff">
+  <a href="https://www.trustpilot.com/review/motionnutrition.com" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+      </div>
+    </div>
+    <div class="grid__item">
+      <div class="home-top-banner-image">
+         {% if section.settings.review-text != blank %}<img loading="lazy" src="{{ section.settings.image | img_url: 'master' }}">{% endif %}
+      </div>
+    </div>
+
+    </div>
+{% comment %}
+    <div class="banner-down-arrow">
+      <a href="#"><img src="https://cdn.shopify.com/s/files/1/0565/0854/7226/files/down-arrow.svg?v=1627035571"></a>
+    </div>
+{% endcomment %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home Top Banner",
+    "settings": [
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+{
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+
+{
+      "type": "html",
+      "id": "content",
+      "label": "Content"
+    },
+{
+      "type": "text",
+      "id": "btn-title",
+      "label": "Btn Title"
+    },
+{
+      "type": "url",
+      "id": "btn-link",
+      "label": "Btn Link"
+    },
+{
+      "type": "html",
+      "id": "review-text",
+      "label": "Review Text"
+    }
+],
+  "presets": [
+    {
+      "name": "Home Top Banner",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,118 @@
+{%- assign _blocks = section.blocks -%}
+
+{%- for _block in _blocks -%}
+  {%- assign current_block = _block.settings -%}
+  {%- assign block_tags = current_block.product_tags | newline_to_br | split: '<br />' -%}
+
+  {%- for tag in block_tags -%}
+    {%- assign _tag = tag | remove: '\n' -%}
+
+    {%- if product.tags contains _tag -%}
+      {%- if current_block.text != blank -%}
+        <div
+          class="callout"
+          style="background: {{ current_block.background_color }};">
+          <div class="page-width">
+            <div class="callout__entry">
+              {{ current_block.text }}
+            </div><!-- /.callout__entry -->
+
+            {%- if current_block.button_url != blank and current_block.button_text != blank -%}
+              <div class="callout__actions">
+                <a
+                  href="{{ current_block.button_url }}"
+                  class="btn btn-white callout__btn{% if current_block.button_style != 'primary' %} callout__btn--{{ current_block.button_style }}{% endif %}">
+                  {{ current_block.button_text }}
+                </a>
+              </div><!-- /.callout__actions-->
+            {%- endif -%}
+          </div><!-- /.page-width -->
+        </div><!-- /.callout -->
+
+        <style>
+          .callout__btn {
+            box-shadow: 4px 8px 0 {{ current_block.background_color | color_darken: 9 }};
+          }
+
+          .callout__btn:hover {
+            box-shadow: 2px 3px 0px {{ current_block.background_color | color_darken: 9 }};
+          }
+        </style>
+      {%- endif -%}
+
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "Product Callout",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "product_tags",
+            "label": "Product tags",
+            "info": "Product tags to link this block to. Use new line to add more tags."
+          },
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background",
+            "default": "#4A42D0"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button style",
+            "options": [
+              {
+                "value": "primary",
+                "label": "Primary"
+              },
+              {
+                "value": "secondary",
+                "label": "Secondary"
+              },
+              {
+                "value": "tertiary",
+                "label": "Tertiary"
+              }
+            ],
+            "default": "primary"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Callout",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

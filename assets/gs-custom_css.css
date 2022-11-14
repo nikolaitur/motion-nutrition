@@ -1,0 +1,204 @@
+.gs-custom__recharge {
+  color: #fff;
+  margin-bottom: 10px;
+  padding: 0 !important;
+  border-radius: 25px;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 1;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gs-custom__recharge .number-parent {
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.gs-custom__recharge .number-input .gs-quantity__hide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  width: auto;
+  margin-left: 15px;
+  padding: 10px 0;
+}
+
+.gs-custom__recharge .number-input .gs-quantity__hide .quantity__button {
+  color: #fff;
+  opacity: 1;
+  width: auto;
+}
+
+.gs-custom__recharge .number-input .gs-quantity__hide .quantity__input {
+  width: 100%;
+  float: left;
+  height: auto;
+  max-width: 30px;
+  padding: 0;
+}
+
+.gs-custom__recharge .number-input .gs-quantity__hide .selected_option {
+  visibility: visible;
+}
+
+.gs-custom__recharge .gs-recharge_subs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  line-height: 24px;
+  font-size: 16px;
+  max-height: 45px;
+  cursor: pointer;
+}
+
+.gs-custom__recharge .gs-recharge_subs p:nth-child(2) {
+  margin-left: 10px;
+}
+
+.gs-custom__recharge .gs-recharge_subs p:nth-child(3) {
+  margin-left: auto;
+}
+
+.gs-custom__recharge .gs-recharge_subs.parent-subscription.active {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 136px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 500px) {
+  .gs-custom__recharge .gs-recharge_subs.parent-subscription.active {
+    max-height: 200px;
+  }
+}
+
+.gs-custom__recharge .gs-recharge_subs .inner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gs-custom__recharge .gs-recharge_subs div.checkbox {
+  min-width: 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.gs-custom__recharge .gs-recharge_subs div.checkbox:hover {
+  border: 7px double #fff;
+}
+
+.gs-custom__recharge .gs-recharge_subs.active div.checkbox {
+  border: 7px double #fff;
+}
+
+.gs-custom__recharge .gs-recharge_subs .gs-recharge_subs-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.gs-custom__recharge .gs-recharge_subs .gs-recharge_subs-inner div.checkbox {
+  border: 1px solid #fff;
+}
+
+.gs-custom__recharge .gs-recharge_subs .gs-recharge_subs-inner p {
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.gs-custom__recharge .gs-recharge_subs .gs-recharge_subs-inner.active div.checkbox {
+  border: 7px double #fff;
+}
+
+.gs-custom__recharge.gs-thumb__recharge {
+  margin: 30px 0px;
+}
+
+.gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription {
+  max-height: 67px;
+  padding: 10px 0px;
+  margin-top: 10px;
+}
+
+.gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription.active {
+  max-height: 158px;
+  padding: 10px 20px;
+}
+
+@media (max-width: 900px) {
+  .gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription.active {
+    max-height: 251px;
+    padding: 5px 10px;
+  }
+}
+
+.gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription .inner {
+  padding: 10px 0px;
+  max-height: 45px;
+  margin: 0 20px;
+}
+
+.gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription .gs-recharge_subs-inner {
+  padding: 0px 20px;
+}
+
+.gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription .gs-recharge_subs-inner:nth-child(2) {
+  padding-top: 20px;
+  padding-bottom: 2px;
+}
+
+.gs-custom__recharge.gs-thumb__recharge .gs-recharge_subs.parent-subscription .gs-recharge_subs-inner:nth-child(3) {
+  padding-top: 2px;
+  padding-bottom: 20px;
+}
+
+.gs-quantity__hide {
+  display: none;
+}
+
+.gs-custom__price h2 {
+  font-size: 42px !important;
+  color: #fff;
+  margin: 0;
+}
+
+.gs-custom__price p.gs-custom__description {
+  color: #fff;
+}
+
+.rc-container-wrapper.rc_container_wrapper {
+  display: none;
+}
+/*# sourceMappingURL=gs-custom_css.css.map */

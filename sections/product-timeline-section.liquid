@@ -1,0 +1,183 @@
+{% if product.metafields.my_fields.timeline_heading != blank %}
+<div class="timeline-section">
+           <div class="page-width">
+                <div class="grid grid--2-col-desktop">
+                    <div class="grid__item">
+                      <div class="home-timeline-left">
+                        {% if product.metafields.my_fields.timeline_heading != blank %}<h4 class="mn__section-tagline text-unplug-medium">{{ product.metafields.my_fields.timeline_heading }}</h4>{% endif %}
+                        <div class="illustration-wrap image-wrap d-none d-lg-flex">
+                            {% if product.metafields.my_fields.timeline_image != blank %}<img loading="lazy" src="{{ product.metafields.my_fields.timeline_image }}" alt="">{% endif %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="timeline-wrap">
+                            <div class="timeline__content-container container-left with-bottle-image">
+                                <div class="timeline__content-wrap">
+                                  {% if product.metafields.timeline_block_1.timeline_title_1 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ product.metafields.timeline_block_1.timeline_title_1 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if product.metafields.timeline_block_1.timeline_content_1 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ product.metafields.timeline_block_1.timeline_content_1 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-right">
+                                <div class="timeline__content-wrap">
+                                  {% if product.metafields.timeline_block_2.timeline_title_2 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ product.metafields.timeline_block_2.timeline_title_2 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if product.metafields.timeline_block_2.timeline_content_2 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ product.metafields.timeline_block_2.timeline_content_2 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-left">
+                                <div class="timeline__content-wrap">
+                                  {% if product.metafields.timeline_block_3.timeline_title_3 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ product.metafields.timeline_block_3.timeline_title_3 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if product.metafields.timeline_block_3.timeline_content_3 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ product.metafields.timeline_block_3.timeline_content_3 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-right with-leaf-image">
+                                <div class="timeline__content-wrap">
+                                  {% if product.metafields.timeline_block_4.timeline_title_4 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ product.metafields.timeline_block_4.timeline_title_4 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if product.metafields.timeline_block_4.timeline_content_4 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ product.metafields.timeline_block_4.timeline_content_4 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+                          {% for block in section.blocks %}
+  {% assign _pro = all_products[block.settings.product] %}
+  {% if _pro.handle == product.handle %}
+ {% if block.settings.timeline_title_5 != blank %}
+                          <div class="timeline__content-container container-left timeline__content-container-5">
+                                <div class="timeline__content-wrap">
+                                   
+                                  <div class="timeline__content-title">
+                                        <h4>{{ block.settings.timeline_title_5 }}</h4>
+                                    </div>
+                                  
+                                   {% if block.settings.timeline_content_5 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ block.settings.timeline_content_5 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+                          {% endif %}
+                          
+ {% endif %}
+  {% endfor %}
+                            <div class="timeline__content-container container-center">
+                                <div class="timeline__content-wrap final-circle">
+                                    {% if product.metafields.my_fields.timeline_circle_text != blank %} <h2><span>{{ product.metafields.my_fields.timeline_circle_text }}</span></h2> {% endif %}
+                                </div>
+                            </div>
+                          
+                          
+                          
+                        </div>
+                    </div>
+                  
+                  <div class="mobile-illustration-wrap">
+                            {% if product.metafields.my_fields.timeline_image != blank %}<img src="{{ product.metafields.my_fields.timeline_image }}" alt="">{% endif %}
+                        </div>
+                  
+                </div>
+            </div>
+        </div>
+{% endif %}
+<style>
+ .timeline-section {
+   background: {{ product.metafields.my_fields.timeline_background_color }};
+	} 
+  .timeline-section .timeline-wrap .timeline__content-container .timeline__content-wrap .timeline__content-title {
+	background-color: {{ product.metafields.my_fields.box_title_background_color }};
+}
+  .mn__section-tagline.text-unplug-medium {
+	color: {{ product.metafields.my_fields.timeline_heading_color }};
+}
+  {% if product.metafields.my_fields.timeline_top_icon != blank %}
+  .timeline-section .timeline-wrap .timeline__content-container.with-bottle-image::before {
+    background-image: url({{ product.metafields.my_fields.timeline_top_icon | img_url: 'master' }});
+}
+  {% endif %}
+  {% if  product.metafields.my_fields.timeline_bottom_icon != blank %}
+  .timeline-section .timeline-wrap .timeline__content-container.with-leaf-image::before {
+	background-image: url({{ product.metafields.my_fields.timeline_bottom_icon | img_url: 'master' }});
+}
+  {% endif %}
+  .timeline-section .timeline-wrap .timeline__content-container .timeline__content-wrap.final-circle {
+	background-color: {{ product.metafields.my_fields.box_title_background_color }};
+}
+  .timeline-section .timeline-wrap .timeline__content-container .timeline__content-wrap::after {
+	background-color: {{ product.metafields.my_fields.box_title_background_color }};
+	}
+</style>
+
+{% schema %}
+  {
+    "name": "Product Timeline Section",
+    "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+{
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+      "type": "text",
+      "id": "timeline_title_5",
+      "label": "Timeline Title 5"
+    },
+ {
+      "type": "html",
+      "id": "timeline_content_5",
+      "label": "Timeline Content 5"
+    }
+
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Timeline Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

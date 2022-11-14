@@ -1,0 +1,306 @@
+{%- assign _blocks = section.blocks -%}
+
+{%- for tag in product.tags -%}
+  {%- assign _tag = tag | downcase -%}
+
+  {%- if _tag contains 'benefits:' -%}
+    {%- assign benefits_tag = _tag -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- for _block in _blocks -%}
+  {%- assign current_block = _block.settings -%}
+  {%- assign block_tags = current_block.product_tags | newline_to_br | split: '<br />' -%}
+
+  {%- for tag in block_tags -%}
+    {%- assign _tag = tag | remove: '\n' | downcase -%}
+
+    {%- if _tag == benefits_tag -%}
+      <div
+        class="home-score-section home-score-section--benefits"
+        id="product-benefits"
+        style="background: {{ current_block.background_color }};">
+        <div class="page-width">
+          <div class="grid grid--2-col-desktop grid--aic">
+            <div class="grid__item">
+              <div class="home-score-detail">
+                {% if current_block.heading != blank %}<h2>{{ current_block.heading }}</h2>{% endif %}
+                {% if current_block.content != blank %}{{ current_block.content }}{% endif %}
+              </div>
+            </div>
+
+            {%- if
+              current_block.title_1 != blank or
+              current_block.title_2 != blank or
+              current_block.title_3 != blank or
+              current_block.title_4 != blank or
+              current_block.title_5 != blank or
+              current_block.title_6 != blank or
+              current_block.title_7 != blank or
+              current_block.title_8 != blank or
+              current_block.title_9 != blank or
+              current_block.title_10 != blank -%}
+              <div class="grid__item">
+                {%- for i in (1..10) -%}
+                  {%- assign accordion_title = 'title_' | append: forloop.index -%}
+                  {%- assign accordion_text = 'text_' | append: forloop.index -%}
+
+                  {%- if current_block[accordion_title] != blank and current_block[accordion_text] != blank -%}
+                    <div class="accordion-faq" style="color: {{ current_block.accordion_text_color }};">
+                      <button class="accordion">{{ current_block[accordion_title] }}</button>
+
+                      <div class="panel" style="display: none;">
+                        {{- current_block[accordion_text] -}}
+                      </div>
+                    </div><!-- /.accordion-faq -->
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<script>
+const initBenefitsAccordion = () => {
+  var acc = document.querySelectorAll("#product-benefits .accordion");
+  var i;
+
+  const getSiblings = (elem) => {
+    return Array.prototype.filter.call(elem.parentNode.children, function (sibling) {
+      return sibling !== elem
+    })
+  }
+
+  const getClosest = (elem, selector) => {
+    let elemTemp = elem
+
+    for (; elemTemp && elemTemp !== document; elemTemp = elemTemp.parentNode) {
+      if (elemTemp.matches(selector)) {
+        return elemTemp
+      }
+    }
+    return null
+  }
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      const accordion = getClosest(event.target, '.accordion');
+
+      getSiblings(accordion.parentNode).forEach(sibling => {
+        const siblingAccordion = sibling.querySelector('.accordion');
+        siblingAccordion.classList.remove('active');
+        siblingAccordion.nextElementSibling.style.display = "none";
+      });
+
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+}
+
+initBenefitsAccordion();
+</script>
+
+{% schema %}
+  {
+    "name": "Product benefits",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "product_tags",
+            "label": "Product tags",
+            "info": "Product tags to link this block to. Use new line to add more tags."
+          },
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background",
+            "default": "#4A42D0"
+          },
+          {
+            "type": "color",
+            "id": "accordion_text_color",
+            "label": "Accordion text color",
+            "default": "#4A42D0"
+          },
+          {
+            "type": "header",
+            "content": "Content"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 1"
+          },
+          {
+            "type": "text",
+            "id": "title_1",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_1",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 2"
+          },
+          {
+            "type": "text",
+            "id": "title_2",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_2",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 3"
+          },
+          {
+            "type": "text",
+            "id": "title_3",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_3",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 4"
+          },
+          {
+            "type": "text",
+            "id": "title_4",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_4",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 5"
+          },
+          {
+            "type": "text",
+            "id": "title_5",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_5",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 6"
+          },
+          {
+            "type": "text",
+            "id": "title_6",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_6",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 7"
+          },
+          {
+            "type": "text",
+            "id": "title_7",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_7",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 8"
+          },
+          {
+            "type": "text",
+            "id": "title_8",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_8",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 9"
+          },
+          {
+            "type": "text",
+            "id": "title_9",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_9",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": "Accordion 10"
+          },
+          {
+            "type": "text",
+            "id": "title_10",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text_10",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product benefits",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,89 @@
+<div class="reviews-section">
+ 
+      <div class="page-width">
+        <div class="review-section-header">
+          {% if section.settings.title != blank %}<h2 >{{ section.settings.title }}</h2>{% endif %}
+        </div>
+          <div class="reviews__slider">
+            {% for block in section.blocks %}
+             <div>
+            <div class="review__item">
+              <div class="review__description text-navy">
+                {% if block.settings.content != blank %}<p>{{ block.settings.content }}</p>{% endif %}
+              </div>
+              <div class="review__rating text-power-up-dark">&#9733; &#9733; &#9733; &#9733; &#9733;
+              </div>
+              {% if block.settings.author-name != blank %}<h4 class="review__customer text-navy">{{ block.settings.author-name }}</h4>{% endif %}
+            </div>
+            </div>
+            {% endfor %}
+          </div>
+        <div id="stamped-reviews-widget" data-widget-type="carousel" data-auto-play="true"></div>
+      </div>
+    </div>
+
+
+
+<script>
+  $(document).ready(function(){
+      $('.reviews__slider').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+   
+    });
+  
+</script>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Home Review Section",
+    "settings": [
+ {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        
+
+{
+        "type": "html",
+        "id": "content",
+        "label": "Content"
+      },
+{
+        "type": "text",
+        "id": "author-name",
+        "label": "Author Name"
+      }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Review Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+

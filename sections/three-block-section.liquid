@@ -1,0 +1,120 @@
+{% if product.metafields.benefit_block_1.benefit_title_1 != blank %}
+<div class="three-block-section">
+  {% if product.metafields.my_fields.benefit_heading != blank %}
+  <div class="home-product-header three-sub-head">
+    <h2>{{ product.metafields.my_fields.benefit_heading }}</h2>
+  </div>
+  {% endif %}
+  <!-- GGG {{product.metafields.my_fields.benefit_heading}} -->
+  <div class="page-width">
+    {% comment %}<div class="three-sub-head" style=""><h2 style="">Our values</h2></div>{% endcomment %}
+    <div class="grid grid--3-col-desktop">
+      <div class="grid__item">
+        <div class="three-block-detail">
+          {% if product.metafields.benefit_block_1.benefit_image_1 != blank %}<img loading="lazy" src="{{ product.metafields.benefit_block_1.benefit_image_1 }}" alt="">{% endif %}
+		  <div>
+          {% if product.metafields.benefit_block_1.benefit_title_1 != blank %}<h3>{{ product.metafields.benefit_block_1.benefit_title_1 }}</h3>{% endif %}
+          {% if product.metafields.benefit_block_1.benefit_content_1 != blank %}<p>{{ product.metafields.benefit_block_1.benefit_content_1 }}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid__item">
+        <div class="three-block-detail">
+           {% if product.metafields.benefit_block_2.benefit_image_2 != blank %}<img loading="lazy" src="{{ product.metafields.benefit_block_2.benefit_image_2 }}" alt="">{% endif %}
+		  <div>
+          {% if product.metafields.benefit_block_2.benefit_title_2 != blank %}<h3>{{ product.metafields.benefit_block_2.benefit_title_2 }}</h3>{% endif %}
+          {% if product.metafields.benefit_block_2.benefit_content_2 != blank %}<p>{{ product.metafields.benefit_block_2.benefit_content_2 }}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid__item">
+        <div class="three-block-detail">
+           {% if product.metafields.benefit_block_3.benefit_image_3 != blank %}<img loading="lazy" src="{{ product.metafields.benefit_block_3.benefit_image_3 }}" alt="">{% endif %}
+		  <div>
+          {% if product.metafields.benefit_block_3.benefit_title_3 != blank %}<h3>{{ product.metafields.benefit_block_3.benefit_title_3 }}</h3>{% endif %}
+          {% if product.metafields.benefit_block_3.benefit_content_3 != blank %}<p>{{ product.metafields.benefit_block_3.benefit_content_3 }}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+      
+     
+    </div>
+  </div>
+</div>
+{% endif %}
+<style>
+ .three-block-section {
+   background: {{ product.metafields.my_fields.benefit_background_color }};
+	} 
+  .three-block-section .grid .grid__item {
+      width: 32%;
+      display: inline-block;
+  }
+  .three-block-section .three-sub-head {
+      width:100%;
+      text-align:center;
+  }
+  .three-block-section .three-sub-head h2 {
+      color:#fff!important;
+      font-weight:700!important;
+	  font-size:60px;
+  }
+  @media only screen and (max-width: 600px) {
+    .three-block-detail {
+    	display:flex;
+      	padding:10px 0px;
+        align-items: flex-end;
+    }
+    .three-block-detail img {
+    	width:40%;
+    }
+    .three-block-section .grid .grid__item {
+        width: 100%;
+        display: block;
+    }
+    .three-block-section .three-sub-head h2 {
+        font-size:30px;
+    }
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    if( $(window).width() < 749 ){
+      $('.BRKthree-block-section .grid').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+         fade: true,
+        autoplay: true,
+  autoplaySpeed: 2000,
+        dots: true 
+      });
+    }
+    });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Three Block Section",
+      "settings": [
+   
+        
+      ],
+  "presets": [
+    {
+      "name": "Three Block Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

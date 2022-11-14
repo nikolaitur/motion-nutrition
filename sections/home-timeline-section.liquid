@@ -1,0 +1,183 @@
+<div class="timeline-section">
+           <div class="page-width">
+                <div class="grid grid--2-col-desktop">
+                    <div class="grid__item">
+                      <div class="home-timeline-left">
+                        {% if section.settings.heading != blank %}<h4 class="mn__section-tagline text-unplug-medium">{{ section.settings.heading }}</h4>{% endif %}
+                        <div class="illustration-wrap image-wrap d-none d-lg-flex">
+                            {% if section.settings.image != blank %}<img alt="" src="{{ section.settings.image | img_url: 'master' }}">{% endif %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="timeline-wrap">
+                            <div class="timeline__content-container container-left with-bottle-image">
+                                <div class="timeline__content-wrap">
+                                  {% if section.settings.title-1 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ section.settings.title-1 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if section.settings.content-1 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ section.settings.content-1 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-right">
+                                <div class="timeline__content-wrap">
+                                  {% if section.settings.title-2 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ section.settings.title-2 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if section.settings.content-2 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ section.settings.content-2 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-left">
+                                <div class="timeline__content-wrap">
+                                  {% if section.settings.title-3 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ section.settings.title-3 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if section.settings.content-3 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ section.settings.content-3 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-right with-leaf-image">
+                                <div class="timeline__content-wrap">
+                                  {% if section.settings.title-4 != blank %}  
+                                  <div class="timeline__content-title">
+                                        <h4>{{ section.settings.title-4 }}</h4>
+                                    </div>
+                                  {% endif %}
+                                   {% if section.settings.content-4 != blank %} 
+                                    <div class="timeline__content-description">
+                                        <p>{{ section.settings.content-4 }}</p>
+                                    </div>
+                                   {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="timeline__content-container container-center">
+                                <div class="timeline__content-wrap final-circle">
+                                    {% if section.settings.circle-text != blank %} <h2><span>{{ section.settings.circle-text }}</span></h2> {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                  <div class="mobile-illustration-wrap">
+                            {% if section.settings.image != blank %}<img alt="" src="{{ section.settings.image | img_url: 'master' }}">{% endif %}
+                        </div>
+                  
+                </div>
+            </div>
+        </div>
+
+{% schema %}
+  {
+    "name": "Home Timeline Section",
+    "settings": [
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+{
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+{
+      "type": "header",
+      "content": "Block 1"
+    },
+{
+        "type": "text",
+        "id": "title-1",
+        "label": "Title"
+      },
+{
+        "type": "text",
+        "id": "content-1",
+        "label": "Content"
+      },
+{
+      "type": "header",
+      "content": "Block 2"
+    },
+{
+        "type": "text",
+        "id": "title-2",
+        "label": "Title"
+      },
+{
+        "type": "text",
+        "id": "content-2",
+        "label": "Content"
+      },
+{
+      "type": "header",
+      "content": "Block 3"
+    },
+{
+        "type": "text",
+        "id": "title-3",
+        "label": "Title"
+      },
+{
+        "type": "text",
+        "id": "content-3",
+        "label": "Content"
+      },
+{
+      "type": "header",
+      "content": "Block 4"
+    },
+{
+        "type": "text",
+        "id": "title-4",
+        "label": "Title"
+      },
+{
+        "type": "text",
+        "id": "content-4",
+        "label": "Content"
+      },
+{
+      "type": "header",
+      "content": "Circle Block"
+    },
+{
+        "type": "text",
+        "id": "circle-text",
+        "label": "circle Text"
+      }
+],
+  "presets": [
+    {
+      "name": "Home Timeline Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

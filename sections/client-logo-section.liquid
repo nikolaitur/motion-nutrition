@@ -1,0 +1,83 @@
+<div class="client-logo-section">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+    <div class="client-logo-section-header">
+     <h2 >{{ section.settings.title }}</h2>
+    </div>
+    {% endif %}  
+    <div class="grid">
+     {% for block in section.blocks %}
+     <div class="grid__item">
+       <div class="client-logo-block">
+         {% if block.settings.image != blank %}<img alt="" src="{{ block.settings.image | img_url: 'master' }}">{% endif %}
+       </div>
+    </div>
+     {% endfor %}
+      </div>
+  </div>
+</div>
+
+<style>
+ .client-logo-section {
+   background: {{ product.metafields.my_fields.logo_background_color }};
+	} 
+</style>
+
+<script>
+  $(document).ready(function(){
+    if( $(window).width() < 749 ){
+      $('.client-logo-section .grid').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+         fade: true,
+        autoplay: true,
+  autoplaySpeed: 2000,
+        dots: true 
+      });
+    }
+    });
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Logo Section",
+    "settings": [
+
+{
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        
+
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

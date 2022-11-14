@@ -1,0 +1,77 @@
+
+
+
+<div class="home-community-section">
+  <div class="page-width">
+  <div class="grid grid--2-col-desktop">
+      <div class="grid__item">
+       <div class="home-community-images-block">
+         <script src="https://apps.elfsight.com/p/platform.js"></script>
+<div class="elfsight-app-8c39ec3b-f66f-4b34-ba91-0681191fd8e4"> </div>
+       </div>
+      
+    
+    
+    </div>
+    <div class="grid__item">
+        <div class="home-community-detail">
+      {% if section.settings.tag != blank %}<h4 >{{ section.settings.tag }}</h4>{% endif %}
+           {% if section.settings.title != blank %}<h2 >{{ section.settings.title }}</h2>{% endif %}
+          {% if section.settings.content != blank %}<p>{{ section.settings.content }}</p>{% endif %}
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Home Community Section",
+    "settings": [
+{
+        "type": "text",
+        "id": "tag",
+        "label": "Tag"
+      },
+{
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+{
+        "type": "html",
+        "id": "content",
+        "label": "Content"
+      }
+],
+  "blocks": [
+    {
+      "type": "community",
+      "name": "Community",
+      "settings": [
+        
+
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Community Section",
+      "category": "Home Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
